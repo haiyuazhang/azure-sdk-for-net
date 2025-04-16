@@ -24,10 +24,6 @@ namespace Azure.ResourceManager.NetworkCloud
     /// </summary>
     public partial class NetworkCloudAgentPoolCollection : ArmCollection, IEnumerable<NetworkCloudAgentPoolResource>, IAsyncEnumerable<NetworkCloudAgentPoolResource>
     {
-
-
-
-
         /// <summary>
         /// Create a new Kubernetes cluster agent pool or update the properties of the existing one.
         /// <list type="bullet">
