@@ -12,6 +12,7 @@ using Azure.Generator.Management.Extensions;
 using System.Collections.Generic;
 using System.Net.Http;
 using static Microsoft.TypeSpec.Generator.Snippets.Snippet;
+using System;
 
 namespace Azure.Generator.Management.Providers.TagMethodProviders
 {
@@ -90,7 +91,7 @@ namespace Azure.Generator.Management.Providers.TagMethodProviders
             foreach (var method in resourceClientProvider.ResourceServiceMethods)
             {
                 var operation = method.Operation;
-                if (operation.HttpMethod == HttpMethod.Get.ToString() && operation.Name == "get")
+                if (operation.HttpMethod == HttpMethod.Get.ToString() && operation.Name == "Get")
                 {
                     getServiceMethod = method;
                     break;

@@ -19,6 +19,28 @@ namespace Azure.Generator.Management
             return type;
         }
 
+        protected override TypeProvider? PostVisitType(TypeProvider type)
+        {
+            foreach (var method in type.Methods)
+            {
+                var needUpdateDoc = false;
+                foreach (var parameter in method.Signature.Parameters)
+                {
+                    if (ManagementClientGenerator.Instance.OutputLibrary.IsResourceModelType(parameter.Type))
+                    {
+                        needUpdateDoc = true;
+                        break;
+                    }
+                }
+
+                if (needUpdateDoc)
+                {
+                    method.Update(signature: method.Signature);
+                }
+            }
+            return type;
+        }
+
         protected override MethodProvider? VisitMethod(MethodProvider method)
         {
             foreach (var parameter in method.Signature.Parameters)
@@ -28,6 +50,7 @@ namespace Azure.Generator.Management
                     parameter.Update("data");
                 }
             }
+
             return base.VisitMethod(method);
         }
 
@@ -36,11 +59,11 @@ namespace Azure.Generator.Management
             if (type is ModelProvider && ManagementClientGenerator.Instance.InputLibrary.IsResourceModel(model))
             {
                 type.Update(relativeFilePath: TransformRelativeFilePath(type));
-                type.Type.Update(TransformName(type));
+                type.Update(name: TransformName(type));
                 foreach (var serialization in type.SerializationProviders)
                 {
                     serialization.Update(relativeFilePath: TransformRelativeFilePathForSerialization(serialization));
-                    serialization.Type.Update(TransformName(serialization));
+                    serialization.Update(name: TransformName(serialization));
                 }
             }
         }
