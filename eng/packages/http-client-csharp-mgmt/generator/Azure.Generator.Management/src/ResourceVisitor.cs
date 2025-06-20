@@ -19,39 +19,46 @@ namespace Azure.Generator.Management
             return type;
         }
 
-        protected override TypeProvider? PostVisitType(TypeProvider type)
-        {
-            foreach (var method in type.Methods)
-            {
-                var needUpdateDoc = false;
-                foreach (var parameter in method.Signature.Parameters)
-                {
-                    if (ManagementClientGenerator.Instance.OutputLibrary.IsResourceModelType(parameter.Type))
-                    {
-                        needUpdateDoc = true;
-                        break;
-                    }
-                }
+        // protected override TypeProvider? PostVisitType(TypeProvider type)
+        // {
+        //     foreach (var method in type.Methods)
+        //     {
+        //         var needUpdateDoc = false;
+        //         foreach (var parameter in method.Signature.Parameters)
+        //         {
+        //             if (ManagementClientGenerator.Instance.OutputLibrary.IsResourceModelType(parameter.Type))
+        //             {
+        //                 needUpdateDoc = true;
+        //                 break;
+        //             }
+        //         }
 
-                if (needUpdateDoc)
-                {
-                    method.Update(signature: method.Signature);
-                }
-            }
-            return type;
-        }
+        //         if (needUpdateDoc)
+        //         {
+        //             method.Update(signature: method.Signature);
+        //         }
+        //     }
+        //     return type;
+        // }
 
         protected override MethodProvider? VisitMethod(MethodProvider method)
         {
+            var updated = false;
             foreach (var parameter in method.Signature.Parameters)
             {
                 if (ManagementClientGenerator.Instance.OutputLibrary.IsResourceModelType(parameter.Type))
                 {
                     parameter.Update("data");
+                    updated = true;
                 }
             }
+            var ret = base.VisitMethod(method);
+            if (updated && ret is not null)
+            {
+                ret.Update(signature: ret.Signature);
+            }
 
-            return base.VisitMethod(method);
+            return ret;
         }
 
         private void TransformResource(InputModelType model, TypeProvider type)
