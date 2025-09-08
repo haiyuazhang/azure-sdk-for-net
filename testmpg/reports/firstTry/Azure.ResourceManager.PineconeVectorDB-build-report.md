@@ -1,0 +1,50 @@
+# Build Report for Azure.ResourceManager.PineconeVectorDB
+SDK Path: D:\work\azure-sdk-for-net\sdk\pineconevectordb\Azure.ResourceManager.PineconeVectorDB
+Generated on: 08/15/2025 21:45:21
+Global Index: 32 of 48
+
+## Code Generation Phase
+**Command**: `dotnet build /t:GenerateCode --tl:off /P:SaveInputs=true /p:LocalSpecRepo=D:\work\spec\specification/liftrpinecone/Pinecone.VectorDb.Management`
+
+✅ **Code generation completed successfully**
+
+## Build Phase
+
+❌ **Build failed**
+
+### Key Errors
+- Build FAILED.
+- D:\work\azure-sdk-for-net\sdk\pineconevectordb\Azure.ResourceManager.PineconeVectorDB\tests\Generated\Samples\Sample_SubscriptionResourceExtensions.cs(38,94): error CS1061: 'SubscriptionResource' does not contain a definition for 'GetPineconeVectorDBOrganizationsAsync' and no accessible extension method 'GetPineconeVectorDBOrganizationsAsync' accepting a first argument of type 'SubscriptionResource' could be found (are you missing a using directive or an assembly reference?) [D:\work\azure-sdk-for-net\sdk\pineconevectordb\Azure.ResourceManager.PineconeVectorDB\tests\Azure.ResourceManager.PineconeVectorDB.Tests.csproj::TargetFramework=net462]
+- D:\work\azure-sdk-for-net\sdk\pineconevectordb\Azure.ResourceManager.PineconeVectorDB\tests\Generated\Samples\Sample_SubscriptionResourceExtensions.cs(38,94): error CS1061: 'SubscriptionResource' does not contain a definition for 'GetPineconeVectorDBOrganizationsAsync' and no accessible extension method 'GetPineconeVectorDBOrganizationsAsync' accepting a first argument of type 'SubscriptionResource' could be found (are you missing a using directive or an assembly reference?) [D:\work\azure-sdk-for-net\sdk\pineconevectordb\Azure.ResourceManager.PineconeVectorDB\tests\Azure.ResourceManager.PineconeVectorDB.Tests.csproj::TargetFramework=net8.0]
+- D:\work\azure-sdk-for-net\sdk\pineconevectordb\Azure.ResourceManager.PineconeVectorDB\tests\Generated\Samples\Sample_SubscriptionResourceExtensions.cs(38,94): error CS1061: 'SubscriptionResource' does not contain a definition for 'GetPineconeVectorDBOrganizationsAsync' and no accessible extension method 'GetPineconeVectorDBOrganizationsAsync' accepting a first argument of type 'SubscriptionResource' could be found (are you missing a using directive or an assembly reference?) [D:\work\azure-sdk-for-net\sdk\pineconevectordb\Azure.ResourceManager.PineconeVectorDB\tests\Azure.ResourceManager.PineconeVectorDB.Tests.csproj::TargetFramework=net9.0]
+
+## Full Build Output
+
+```text
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  InheritDocTask replaced 53 of 53 inheritdoc tags and removed 31 private member docs in D:\work\azure-sdk-for-net\artifacts\obj\Azure.ResourceManager.PineconeVectorDB\Debug\netstandard2.0\Azure.ResourceManager.PineconeVectorDB.xml
+  Azure.ResourceManager.PineconeVectorDB -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.ResourceManager.PineconeVectorDB\Debug\netstandard2.0\Azure.ResourceManager.PineconeVectorDB.dll
+  InheritDocTask replaced 53 of 53 inheritdoc tags and removed 31 private member docs in D:\work\azure-sdk-for-net\artifacts\obj\Azure.ResourceManager.PineconeVectorDB\Debug\net8.0\Azure.ResourceManager.PineconeVectorDB.xml
+  Azure.ResourceManager.PineconeVectorDB -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.ResourceManager.PineconeVectorDB\Debug\net8.0\Azure.ResourceManager.PineconeVectorDB.dll
+  Azure.Core.TestFramework -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Core.TestFramework\Debug\net9.0\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Core.TestFramework\Debug\net8.0\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Core.TestFramework\Debug\net462\Azure.Core.TestFramework.dll
+D:\work\azure-sdk-for-net\sdk\pineconevectordb\Azure.ResourceManager.PineconeVectorDB\tests\Generated\Samples\Sample_SubscriptionResourceExtensions.cs(38,94): error CS1061: 'SubscriptionResource' does not contain a definition for 'GetPineconeVectorDBOrganizationsAsync' and no accessible extension method 'GetPineconeVectorDBOrganizationsAsync' accepting a first argument of type 'SubscriptionResource' could be found (are you missing a using directive or an assembly reference?) [D:\work\azure-sdk-for-net\sdk\pineconevectordb\Azure.ResourceManager.PineconeVectorDB\tests\Azure.ResourceManager.PineconeVectorDB.Tests.csproj::TargetFramework=net462]
+D:\work\azure-sdk-for-net\sdk\pineconevectordb\Azure.ResourceManager.PineconeVectorDB\tests\Generated\Samples\Sample_SubscriptionResourceExtensions.cs(38,94): error CS1061: 'SubscriptionResource' does not contain a definition for 'GetPineconeVectorDBOrganizationsAsync' and no accessible extension method 'GetPineconeVectorDBOrganizationsAsync' accepting a first argument of type 'SubscriptionResource' could be found (are you missing a using directive or an assembly reference?) [D:\work\azure-sdk-for-net\sdk\pineconevectordb\Azure.ResourceManager.PineconeVectorDB\tests\Azure.ResourceManager.PineconeVectorDB.Tests.csproj::TargetFramework=net8.0]
+D:\work\azure-sdk-for-net\sdk\pineconevectordb\Azure.ResourceManager.PineconeVectorDB\tests\Generated\Samples\Sample_SubscriptionResourceExtensions.cs(38,94): error CS1061: 'SubscriptionResource' does not contain a definition for 'GetPineconeVectorDBOrganizationsAsync' and no accessible extension method 'GetPineconeVectorDBOrganizationsAsync' accepting a first argument of type 'SubscriptionResource' could be found (are you missing a using directive or an assembly reference?) [D:\work\azure-sdk-for-net\sdk\pineconevectordb\Azure.ResourceManager.PineconeVectorDB\tests\Azure.ResourceManager.PineconeVectorDB.Tests.csproj::TargetFramework=net9.0]
+
+Build FAILED.
+
+D:\work\azure-sdk-for-net\sdk\pineconevectordb\Azure.ResourceManager.PineconeVectorDB\tests\Generated\Samples\Sample_SubscriptionResourceExtensions.cs(38,94): error CS1061: 'SubscriptionResource' does not contain a definition for 'GetPineconeVectorDBOrganizationsAsync' and no accessible extension method 'GetPineconeVectorDBOrganizationsAsync' accepting a first argument of type 'SubscriptionResource' could be found (are you missing a using directive or an assembly reference?) [D:\work\azure-sdk-for-net\sdk\pineconevectordb\Azure.ResourceManager.PineconeVectorDB\tests\Azure.ResourceManager.PineconeVectorDB.Tests.csproj::TargetFramework=net462]
+D:\work\azure-sdk-for-net\sdk\pineconevectordb\Azure.ResourceManager.PineconeVectorDB\tests\Generated\Samples\Sample_SubscriptionResourceExtensions.cs(38,94): error CS1061: 'SubscriptionResource' does not contain a definition for 'GetPineconeVectorDBOrganizationsAsync' and no accessible extension method 'GetPineconeVectorDBOrganizationsAsync' accepting a first argument of type 'SubscriptionResource' could be found (are you missing a using directive or an assembly reference?) [D:\work\azure-sdk-for-net\sdk\pineconevectordb\Azure.ResourceManager.PineconeVectorDB\tests\Azure.ResourceManager.PineconeVectorDB.Tests.csproj::TargetFramework=net8.0]
+D:\work\azure-sdk-for-net\sdk\pineconevectordb\Azure.ResourceManager.PineconeVectorDB\tests\Generated\Samples\Sample_SubscriptionResourceExtensions.cs(38,94): error CS1061: 'SubscriptionResource' does not contain a definition for 'GetPineconeVectorDBOrganizationsAsync' and no accessible extension method 'GetPineconeVectorDBOrganizationsAsync' accepting a first argument of type 'SubscriptionResource' could be found (are you missing a using directive or an assembly reference?) [D:\work\azure-sdk-for-net\sdk\pineconevectordb\Azure.ResourceManager.PineconeVectorDB\tests\Azure.ResourceManager.PineconeVectorDB.Tests.csproj::TargetFramework=net9.0]
+    0 Warning(s)
+    3 Error(s)
+
+Time Elapsed 00:00:03.41
+```
+
+---
+*Processing time: 01:32*
+

@@ -1,0 +1,256 @@
+# Build Report for Azure.ResourceManager.ContainerOrchestratorRuntime
+SDK Path: D:\work\azure-sdk-for-net\sdk\containerorchestratorruntime\Azure.ResourceManager.ContainerOrchestratorRuntime
+Generated on: 08/15/2025 21:07:44
+Global Index: 10 of 48
+
+## Code Generation Phase
+**Command**: `dotnet build /t:GenerateCode --tl:off /P:SaveInputs=true /p:LocalSpecRepo=D:\work\spec\specification\kubernetesruntime\KubernetesRuntime.Management`
+
+❌ **Code generation failed**
+
+**Error Output:**
+```text
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  npm warn EBADENGINE Unsupported engine {
+  npm warn EBADENGINE   package: 'yargs@18.0.0',
+  npm warn EBADENGINE   required: { node: '^20.19.0 || ^22.12.0 || >=23' },
+  npm warn EBADENGINE   current: { node: 'v20.18.3', npm: '10.8.2' }
+  npm warn EBADENGINE }
+  npm warn EBADENGINE Unsupported engine {
+  npm warn EBADENGINE   package: 'yargs-parser@22.0.0',
+  npm warn EBADENGINE   required: { node: '^20.19.0 || ^22.12.0 || >=23' },
+  npm warn EBADENGINE   current: { node: 'v20.18.3', npm: '10.8.2' }
+  npm warn EBADENGINE }
+  
+  added 172 packages in 52s
+  
+  30 packages are looking for funding
+    run `npm fund` for details
+  Using output directory 'D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/'
+  
+  888                                      888 d8b                   888    
+  888                                      888 Y8P                   888    
+  888                                      888                       888    
+  888888 .d8888b  88888b.          .d8888b 888 888  .d88b.  88888b.  888888 
+  888    88K      888 "88b        d88P"    888 888 d8P  Y8b 888 "88b 888    
+  888    "Y8888b. 888  888 888888 888      888 888 88888888 888  888 888    
+  Y88b.       X88 888 d88P        Y88b.    888 888 Y8b.     888  888 Y88b.  
+   "Y888  88888P' 88888P"          "Y8888P 888 888  "Y8888  888  888  "Y888 
+                  888                                                       
+                  888                                                       
+                  888                                                       
+  
+  0.28.0
+  NOTE: A path to a local spec was provided, will generate based off of local files...
+  Local spec repo root is D:/work/spec
+  Found emitter package @azure-typespec/http-client-csharp-mgmt@1.0.0-alpha.20250814.2
+  Installing dependencies from npm...
+  npm warn EBADENGINE Unsupported engine {
+  npm warn EBADENGINE   package: 'yargs@18.0.0',
+  npm warn EBADENGINE   required: { node: '^20.19.0 || ^22.12.0 || >=23' },
+  npm warn EBADENGINE   current: { node: 'v20.18.3', npm: '10.8.2' }
+  npm warn EBADENGINE }
+  npm warn EBADENGINE Unsupported engine {
+  npm warn EBADENGINE   package: 'yargs-parser@22.0.0',
+  npm warn EBADENGINE   required: { node: '^20.19.0 || ^22.12.0 || >=23' },
+  npm warn EBADENGINE   current: { node: 'v20.18.3', npm: '10.8.2' }
+  npm warn EBADENGINE }
+  
+  added 122 packages, and audited 123 packages in 15s
+  
+  25 packages are looking for funding
+    run `npm fund` for details
+  
+  found 0 vulnerabilities
+  'grep' is not recognized as an internal or external command,
+  operable program or batch file.
+  Resolved path: D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/TempTypeSpecFiles/node_modules/@typespec/compiler
+  Compiling tsp using @azure-typespec/http-client-csharp-mgmt...
+  update
+  
+  Sync and generate from a TypeSpec project
+  
+  Options:
+    -d, --debug            Enable debug logging                          [boolean]
+    -o, --output-dir       Specify an alternate output directory for the generated
+                           files.                          [string] [default: "."]
+    -y, --no-prompt        Skip any interactive prompts.                 [boolean]
+        --help             Show help                                     [boolean]
+        --repo             Repository where the project is defined        [string]
+        --commit           Commit hash to be used                         [string]
+        --tsp-config       Path to tspconfig.yaml                         [string]
+        --local-spec-repo  Path to local spec repo                        [string]
+        --emitter-options  The options to pass to the emitter             [string]
+        --save-inputs      Don't clean up the temp directory after generation
+                                                                         [boolean]
+        --skip-install     Skip installing dependencies                  [boolean]
+        --trace            Enable tracing during compile                   [array]
+    -v, --version          Show version number                           [boolean]
+  
+  ExternalError: Emitter "@azure-typespec/http-client-csharp-mgmt" crashed! This is a bug.
+  Please file an issue at https://github.com/azure-sdk/azure-sdk-for-net/issues
+  
+Error : error : Failed to generate the library. Exit code: 2148734499. [D:\work\azure-sdk-for-net\sdk\containerorchestratorruntime\Azure.ResourceManager.ContainerOrchestratorRuntime\src\Azure.ResourceManager.ContainerOrchestratorRuntime.csproj]
+  StackTrace: 
+  Process terminated. Assertion failed.
+  The request path should always have an even number of segments for pairing.
+     at Azure.Generator.Management.Utilities.ContextualParameterBuilder.<BuildContextualParameterHierarchy>g__ReverselySplitIntoPairs|1_4(IReadOnlyList`1 requestPath) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Utilities/ContextualParameterBuilder.cs:line 129
+     at Azure.Generator.Management.Utilities.ContextualParameterBuilder.BuildContextualParameterHierarchy(RequestPathPattern current, Stack`1 parameterStack, Int32 parentLayerCount) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Utilities/ContextualParameterBuilder.cs:line 65
+     at Azure.Generator.Management.Utilities.ContextualParameterBuilder.BuildContextualParameterHierarchy(RequestPathPattern current, Stack`1 parameterStack, Int32 parentLayerCount) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Utilities/ContextualParameterBuilder.cs:line 114
+     at Azure.Generator.Management.Utilities.ContextualParameterBuilder.BuildContextualParameters(RequestPathPattern requestPathPattern) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Utilities/ContextualParameterBuilder.cs:line 28
+     at Azure.Generator.Management.Models.RequestPathPattern.TryGetContextualParameter(ParameterProvider parameter, ContextualParameter& contextualParameter) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Models/RequestPathPattern.cs:line 206
+     at Azure.Generator.Management.Utilities.OperationMethodParameterHelper.GetOperationMethodParameters(InputServiceMethod serviceMethod, RequestPathPattern contextualPath, Boolean forceLro) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Utilities/OperationMethodParameterHelper.cs:line 38
+     at Azure.Generator.Management.Providers.OperationMethodProviders.ResourceOperationMethodProvider.GetOperationMethodParameters() in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Providers/OperationMethodProviders/ResourceOperationMethodProvider.cs:line 153
+     at Azure.Generator.Management.Providers.OperationMethodProviders.ResourceOperationMethodProvider.CreateSignature() in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Providers/OperationMethodProviders/ResourceOperationMethodProvider.cs:line 158
+     at Azure.Generator.Management.Providers.OperationMethodProviders.ResourceOperationMethodProvider..ctor(TypeProvider enclosingType, RequestPathPattern contextualPath, RestClientInfo restClientInfo, InputServiceMethod method, Boolean isAsync, String methodName, FormattableString description, Boolean forceLro) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Providers/OperationMethodProviders/ResourceOperationMethodProvider.cs:line 92
+     at Azure.Generator.Management.Providers.ResourceClientProvider.BuildMethods() in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Providers/ResourceClientProvider.cs:line 385
+     at Microsoft.TypeSpec.Generator.Providers.TypeProvider.BuildMethodsInternal()
+     at Microsoft.TypeSpec.Generator.Providers.TypeProvider.get_Methods()
+     at Microsoft.TypeSpec.Generator.Providers.TypeProvider.EnsureBuilt()
+     at Microsoft.TypeSpec.Generator.LibraryVisitor.VisitLibrary(OutputLibrary library)
+     at Microsoft.TypeSpec.Generator.CSharpGen.ExecuteAsync()
+     at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+     at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+     at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+     at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+     at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(IAsyncStateMachineBox box, Boolean allowInlining)
+     at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+     at System.Threading.Tasks.Task`1.TrySetResult(TResult result)
+     at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetExistingTaskResult(Task`1 task, TResult result)
+     at Microsoft.TypeSpec.Generator.GeneratedCodeWorkspace.Create()
+     at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+     at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+     at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+     at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+     at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(IAsyncStateMachineBox box, Boolean allowInlining)
+     at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+     at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+     at System.Threading.ThreadPoolWorkQueue.Dispatch()
+     at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+  
+      at $onEmit (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/TempTypeSpecFiles/node_modules/@typespec/http-client-csharp/dist/emitter/src/emitter.js:88:27)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async $onEmit (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/TempTypeSpecFiles/node_modules/@azure-typespec/http-client-csharp/dist/emitter/src/emitter.js:29:5)
+      at async Object.$onEmit [as emitFunction] (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/TempTypeSpecFiles/node_modules/@azure-typespec/http-client-csharp-mgmt/dist/emitter/emitter.js:12:5)
+      at async runEmitter (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:711:9)
+      at async file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:684:9
+      at async emit (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:682:12)
+      at async compile (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:53:30)
+      at async compileTsp (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/node_modules/@azure-tools/typespec-client-generator-cli/dist/typespec.js:129:21)
+      at async generateCommand (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/node_modules/@azure-tools/typespec-client-generator-cli/dist/commands.js:351:20)
+  
+  --------------------------------------------------
+  Library Version                1.0.0-alpha.20250814.2
+  TypeSpec Compiler Version      1.3.0
+  --------------------------------------------------
+      at runEmitter (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:714:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:684:9
+      at async emit (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:682:12)
+      at async compile (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:53:30)
+      at async compileTsp (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/node_modules/@azure-tools/typespec-client-generator-cli/dist/typespec.js:129:21)
+      at async generateCommand (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/node_modules/@azure-tools/typespec-client-generator-cli/dist/commands.js:351:20)
+      at async updateCommand (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/node_modules/@azure-tools/typespec-client-generator-cli/dist/commands.js:400:5)
+      at async Object.handler (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/node_modules/@azure-tools/typespec-client-generator-cli/dist/index.js:190:5) {
+    info: {
+      kind: 'emitter',
+      metadata: {
+        type: 'module',
+        name: '@azure-typespec/http-client-csharp-mgmt',
+        bugs: [Object],
+        version: '1.0.0-alpha.20250814.2'
+      },
+error : error : Error: Failed to generate the library. Exit code: 2148734499. [D:\work\azure-sdk-for-net\sdk\containerorchestratorruntime\Azure.ResourceManager.ContainerOrchestratorRuntime\src\Azure.ResourceManager.ContainerOrchestratorRuntime.csproj]
+      StackTrace: 
+      Process terminated. Assertion failed.
+      The request path should always have an even number of segments for pairing.
+         at Azure.Generator.Management.Utilities.ContextualParameterBuilder.<BuildContextualParameterHierarchy>g__ReverselySplitIntoPairs|1_4(IReadOnlyList`1 requestPath) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Utilities/ContextualParameterBuilder.cs:line 129
+         at Azure.Generator.Management.Utilities.ContextualParameterBuilder.BuildContextualParameterHierarchy(RequestPathPattern current, Stack`1 parameterStack, Int32 parentLayerCount) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Utilities/ContextualParameterBuilder.cs:line 65
+         at Azure.Generator.Management.Utilities.ContextualParameterBuilder.BuildContextualParameterHierarchy(RequestPathPattern current, Stack`1 parameterStack, Int32 parentLayerCount) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Utilities/ContextualParameterBuilder.cs:line 114
+         at Azure.Generator.Management.Utilities.ContextualParameterBuilder.BuildContextualParameters(RequestPathPattern requestPathPattern) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Utilities/ContextualParameterBuilder.cs:line 28
+         at Azure.Generator.Management.Models.RequestPathPattern.TryGetContextualParameter(ParameterProvider parameter, ContextualParameter& contextualParameter) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Models/RequestPathPattern.cs:line 206
+         at Azure.Generator.Management.Utilities.OperationMethodParameterHelper.GetOperationMethodParameters(InputServiceMethod serviceMethod, RequestPathPattern contextualPath, Boolean forceLro) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Utilities/OperationMethodParameterHelper.cs:line 38
+         at Azure.Generator.Management.Providers.OperationMethodProviders.ResourceOperationMethodProvider.GetOperationMethodParameters() in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Providers/OperationMethodProviders/ResourceOperationMethodProvider.cs:line 153
+         at Azure.Generator.Management.Providers.OperationMethodProviders.ResourceOperationMethodProvider.CreateSignature() in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Providers/OperationMethodProviders/ResourceOperationMethodProvider.cs:line 158
+         at Azure.Generator.Management.Providers.OperationMethodProviders.ResourceOperationMethodProvider..ctor(TypeProvider enclosingType, RequestPathPattern contextualPath, RestClientInfo restClientInfo, InputServiceMethod method, Boolean isAsync, String methodName, FormattableString description, Boolean forceLro) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Providers/OperationMethodProviders/ResourceOperationMethodProvider.cs:line 92
+         at Azure.Generator.Management.Providers.ResourceClientProvider.BuildMethods() in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Providers/ResourceClientProvider.cs:line 385
+         at Microsoft.TypeSpec.Generator.Providers.TypeProvider.BuildMethodsInternal()
+         at Microsoft.TypeSpec.Generator.Providers.TypeProvider.get_Methods()
+         at Microsoft.TypeSpec.Generator.Providers.TypeProvider.EnsureBuilt()
+         at Microsoft.TypeSpec.Generator.LibraryVisitor.VisitLibrary(OutputLibrary library)
+         at Microsoft.TypeSpec.Generator.CSharpGen.ExecuteAsync()
+         at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+         at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+         at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+         at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+         at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(IAsyncStateMachineBox box, Boolean allowInlining)
+         at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+         at System.Threading.Tasks.Task`1.TrySetResult(TResult result)
+         at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetExistingTaskResult(Task`1 task, TResult result)
+         at Microsoft.TypeSpec.Generator.GeneratedCodeWorkspace.Create()
+         at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+         at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+         at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+         at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+         at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(IAsyncStateMachineBox box, Boolean allowInlining)
+         at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+         at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+         at System.Threading.ThreadPoolWorkQueue.Dispatch()
+         at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+      
+          at $onEmit (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/TempTypeSpecFiles/node_modules/@typespec/http-client-csharp/dist/emitter/src/emitter.js:88:27)
+          at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+          at async $onEmit (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/TempTypeSpecFiles/node_modules/@azure-typespec/http-client-csharp/dist/emitter/src/emitter.js:29:5)
+          at async Object.$onEmit [as emitFunction] (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/TempTypeSpecFiles/node_modules/@azure-typespec/http-client-csharp-mgmt/dist/emitter/emitter.js:12:5)
+          at async runEmitter (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:711:9)
+          at async file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:684:9
+          at async emit (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:682:12)
+          at async compile (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:53:30)
+          at async compileTsp (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/node_modules/@azure-tools/typespec-client-generator-cli/dist/typespec.js:129:21)
+          at async generateCommand (file:///D:/work/azure-sdk-for-net/sdk/containerorchestratorruntime/Azure.ResourceManager.ContainerOrchestratorRuntime/node_modules/@azure-tools/typespec-client-generator-cli/dist/commands.js:351:20)
+    }
+  }
+c:\NUGET_PACKAGES\microsoft.azure.autorest.csharp\3.0.0-beta.20250728.3\buildMultiTargeting\Microsoft.Azure.AutoRest.CSharp.targets(66,5): error MSB3073: The command "npx --no-install --package=@azure-tools/typespec-client-generator-cli --yes tsp-client update --no-prompt --output-dir D:\work\azure-sdk-for-net\sdk\containerorchestratorruntime\Azure.ResourceManager.ContainerOrchestratorRuntime\src/../ --save-inputs --local-spec-repo D:\work\spec\specification\kubernetesruntime\KubernetesRuntime.Management  " exited with code 1. [D:\work\azure-sdk-for-net\sdk\containerorchestratorruntime\Azure.ResourceManager.ContainerOrchestratorRuntime\src\Azure.ResourceManager.ContainerOrchestratorRuntime.csproj]
+
+Build FAILED.
+
+Error : error : Failed to generate the library. Exit code: 2148734499. [D:\work\azure-sdk-for-net\sdk\containerorchestratorruntime\Azure.ResourceManager.ContainerOrchestratorRuntime\src\Azure.ResourceManager.ContainerOrchestratorRuntime.csproj]
+error : error : Error: Failed to generate the library. Exit code: 2148734499. [D:\work\azure-sdk-for-net\sdk\containerorchestratorruntime\Azure.ResourceManager.ContainerOrchestratorRuntime\src\Azure.ResourceManager.ContainerOrchestratorRuntime.csproj]
+c:\NUGET_PACKAGES\microsoft.azure.autorest.csharp\3.0.0-beta.20250728.3\buildMultiTargeting\Microsoft.Azure.AutoRest.CSharp.targets(66,5): error MSB3073: The command "npx --no-install --package=@azure-tools/typespec-client-generator-cli --yes tsp-client update --no-prompt --output-dir D:\work\azure-sdk-for-net\sdk\containerorchestratorruntime\Azure.ResourceManager.ContainerOrchestratorRuntime\src/../ --save-inputs --local-spec-repo D:\work\spec\specification\kubernetesruntime\KubernetesRuntime.Management  " exited with code 1. [D:\work\azure-sdk-for-net\sdk\containerorchestratorruntime\Azure.ResourceManager.ContainerOrchestratorRuntime\src\Azure.ResourceManager.ContainerOrchestratorRuntime.csproj]
+    0 Warning(s)
+    3 Error(s)
+
+Time Elapsed 00:01:33.25
+```
+
+## Build Phase
+
+✅ **Build completed successfully**
+
+## Full Build Output
+
+```text
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  InheritDocTask replaced 223 of 223 inheritdoc tags and removed 24 private member docs in D:\work\azure-sdk-for-net\artifacts\obj\Azure.ResourceManager.ContainerOrchestratorRuntime\Debug\netstandard2.0\Azure.ResourceManager.ContainerOrchestratorRuntime.xml
+  Azure.ResourceManager.ContainerOrchestratorRuntime -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.ResourceManager.ContainerOrchestratorRuntime\Debug\netstandard2.0\Azure.ResourceManager.ContainerOrchestratorRuntime.dll
+  InheritDocTask replaced 223 of 223 inheritdoc tags and removed 24 private member docs in D:\work\azure-sdk-for-net\artifacts\obj\Azure.ResourceManager.ContainerOrchestratorRuntime\Debug\net8.0\Azure.ResourceManager.ContainerOrchestratorRuntime.xml
+  Azure.ResourceManager.ContainerOrchestratorRuntime -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.ResourceManager.ContainerOrchestratorRuntime\Debug\net8.0\Azure.ResourceManager.ContainerOrchestratorRuntime.dll
+  Azure.Core.TestFramework -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Core.TestFramework\Debug\net462\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Core.TestFramework\Debug\net9.0\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Core.TestFramework\Debug\net8.0\Azure.Core.TestFramework.dll
+  Azure.ResourceManager.ContainerOrchestratorRuntime.Tests -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.ResourceManager.ContainerOrchestratorRuntime.Tests\Debug\net462\Azure.ResourceManager.ContainerOrchestratorRuntime.Tests.dll
+  Azure.ResourceManager.ContainerOrchestratorRuntime.Tests -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.ResourceManager.ContainerOrchestratorRuntime.Tests\Debug\net8.0\Azure.ResourceManager.ContainerOrchestratorRuntime.Tests.dll
+  Azure.ResourceManager.ContainerOrchestratorRuntime.Tests -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.ResourceManager.ContainerOrchestratorRuntime.Tests\Debug\net9.0\Azure.ResourceManager.ContainerOrchestratorRuntime.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:06.40
+```
+
+---
+*Processing time: 01:40*
+
