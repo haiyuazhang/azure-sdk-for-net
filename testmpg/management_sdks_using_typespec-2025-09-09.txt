@@ -1,11 +1,6 @@
-D:\work\azure-sdk-for-net\sdk\terraform\Azure.ResourceManager.Terraform
-D:\work\azure-sdk-for-net\sdk\storageactions\Azure.ResourceManager.StorageActions
-D:\work\azure-sdk-for-net\sdk\portalservices\Azure.ResourceManager.PortalServicesCopilot
 D:\work\azure-sdk-for-net\sdk\agricultureplatform\Azure.ResourceManager.AgriculturePlatform
-D:\work\azure-sdk-for-net\sdk\ai\Azure.AI.Agents.Persistent
 D:\work\azure-sdk-for-net\sdk\arizeaiobservabilityeval\Azure.ResourceManager.ArizeAIObservabilityEval
 D:\work\azure-sdk-for-net\sdk\avs\Azure.ResourceManager.Avs
-D:\work\azure-sdk-for-net\sdk\hybridconnectivity\Azure.ResourceManager.HybridConnectivity
 D:\work\azure-sdk-for-net\sdk\carbon\Azure.ResourceManager.CarbonOptimization
 D:\work\azure-sdk-for-net\sdk\chaos\Azure.ResourceManager.Chaos
 D:\work\azure-sdk-for-net\sdk\cloudhealth\Azure.ResourceManager.CloudHealth
@@ -20,13 +15,12 @@ D:\work\azure-sdk-for-net\sdk\deviceprovisioningservices\Azure.ResourceManager.D
 D:\work\azure-sdk-for-net\sdk\deviceregistry\Azure.ResourceManager.DeviceRegistry
 D:\work\azure-sdk-for-net\sdk\devopsinfrastructure\Azure.ResourceManager.DevOpsInfrastructure
 D:\work\azure-sdk-for-net\sdk\durabletask\Azure.ResourceManager.DurableTask
-D:\work\azure-sdk-for-net\sdk\easm\Azure.Analytics.Defender.Easm
 D:\work\azure-sdk-for-net\sdk\elasticsan\Azure.ResourceManager.ElasticSan
 D:\work\azure-sdk-for-net\sdk\fabric\Azure.ResourceManager.Fabric
 D:\work\azure-sdk-for-net\sdk\grafana\Azure.ResourceManager.Grafana
 D:\work\azure-sdk-for-net\sdk\hardwaresecuritymodules\Azure.ResourceManager.HardwareSecurityModules
 D:\work\azure-sdk-for-net\sdk\healthdataaiservices\Azure.ResourceManager.HealthDataAIServices
-D:\work\azure-sdk-for-net\sdk\healthinsights\Azure.Health.Insights.RadiologyInsights
+D:\work\azure-sdk-for-net\sdk\hybridconnectivity\Azure.ResourceManager.HybridConnectivity
 D:\work\azure-sdk-for-net\sdk\informaticadatamanagement\Azure.ResourceManager.InformaticaDataManagement
 D:\work\azure-sdk-for-net\sdk\iotoperations\Azure.ResourceManager.IotOperations
 D:\work\azure-sdk-for-net\sdk\lambdatesthyperexecute\Azure.ResourceManager.LambdaTestHyperExecute
@@ -49,7 +43,9 @@ D:\work\azure-sdk-for-net\sdk\servicefabricmanagedclusters\Azure.ResourceManager
 D:\work\azure-sdk-for-net\sdk\servicenetworking\Azure.ResourceManager.ServiceNetworking
 D:\work\azure-sdk-for-net\sdk\sitemanager\Azure.ResourceManager.SiteManager
 D:\work\azure-sdk-for-net\sdk\standbypool\Azure.ResourceManager.StandbyPool
+D:\work\azure-sdk-for-net\sdk\storageactions\Azure.ResourceManager.StorageActions
 D:\work\azure-sdk-for-net\sdk\storagediscovery\Azure.ResourceManager.StorageDiscovery
 D:\work\azure-sdk-for-net\sdk\storagemover\Azure.ResourceManager.StorageMover
+D:\work\azure-sdk-for-net\sdk\terraform\Azure.ResourceManager.Terraform
 D:\work\azure-sdk-for-net\sdk\weightsandbiases\Azure.ResourceManager.WeightsAndBiases
 D:\work\azure-sdk-for-net\sdk\workloadssapvirtualinstance\Azure.ResourceManager.WorkloadsSapVirtualInstance

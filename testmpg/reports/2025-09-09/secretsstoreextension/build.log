@@ -1,0 +1,22 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  InheritDocTask replaced 51 of 51 inheritdoc tags and removed 34 private member docs in D:\work\azure-sdk-for-net\artifacts\obj\Azure.ResourceManager.SecretsStoreExtension\Debug\netstandard2.0\Azure.ResourceManager.SecretsStoreExtension.xml
+  Azure.ResourceManager.SecretsStoreExtension -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.ResourceManager.SecretsStoreExtension\Debug\netstandard2.0\Azure.ResourceManager.SecretsStoreExtension.dll
+  InheritDocTask replaced 51 of 51 inheritdoc tags and removed 34 private member docs in D:\work\azure-sdk-for-net\artifacts\obj\Azure.ResourceManager.SecretsStoreExtension\Debug\net8.0\Azure.ResourceManager.SecretsStoreExtension.xml
+  Azure.ResourceManager.SecretsStoreExtension -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.ResourceManager.SecretsStoreExtension\Debug\net8.0\Azure.ResourceManager.SecretsStoreExtension.dll
+  Azure.Core.TestFramework -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Core.TestFramework\Debug\net462\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Core.TestFramework\Debug\net8.0\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Core.TestFramework\Debug\net9.0\Azure.Core.TestFramework.dll
+D:\work\azure-sdk-for-net\sdk\secretsstoreextension\Azure.ResourceManager.SecretsStoreExtension\tests\SecretSyncTests.cs(121,21): error CS1739: The best overload for 'SecretSyncUpdateProperties' does not have a parameter named 'serializedAdditionalRawData' [D:\work\azure-sdk-for-net\sdk\secretsstoreextension\Azure.ResourceManager.SecretsStoreExtension\tests\Azure.ResourceManager.SecretsStoreExtension.Tests.csproj::TargetFramework=net9.0]
+D:\work\azure-sdk-for-net\sdk\secretsstoreextension\Azure.ResourceManager.SecretsStoreExtension\tests\SecretSyncTests.cs(121,21): error CS1739: The best overload for 'SecretSyncUpdateProperties' does not have a parameter named 'serializedAdditionalRawData' [D:\work\azure-sdk-for-net\sdk\secretsstoreextension\Azure.ResourceManager.SecretsStoreExtension\tests\Azure.ResourceManager.SecretsStoreExtension.Tests.csproj::TargetFramework=net8.0]
+D:\work\azure-sdk-for-net\sdk\secretsstoreextension\Azure.ResourceManager.SecretsStoreExtension\tests\SecretSyncTests.cs(121,21): error CS1739: The best overload for 'SecretSyncUpdateProperties' does not have a parameter named 'serializedAdditionalRawData' [D:\work\azure-sdk-for-net\sdk\secretsstoreextension\Azure.ResourceManager.SecretsStoreExtension\tests\Azure.ResourceManager.SecretsStoreExtension.Tests.csproj::TargetFramework=net462]
+
+Build FAILED.
+
+D:\work\azure-sdk-for-net\sdk\secretsstoreextension\Azure.ResourceManager.SecretsStoreExtension\tests\SecretSyncTests.cs(121,21): error CS1739: The best overload for 'SecretSyncUpdateProperties' does not have a parameter named 'serializedAdditionalRawData' [D:\work\azure-sdk-for-net\sdk\secretsstoreextension\Azure.ResourceManager.SecretsStoreExtension\tests\Azure.ResourceManager.SecretsStoreExtension.Tests.csproj::TargetFramework=net9.0]
+D:\work\azure-sdk-for-net\sdk\secretsstoreextension\Azure.ResourceManager.SecretsStoreExtension\tests\SecretSyncTests.cs(121,21): error CS1739: The best overload for 'SecretSyncUpdateProperties' does not have a parameter named 'serializedAdditionalRawData' [D:\work\azure-sdk-for-net\sdk\secretsstoreextension\Azure.ResourceManager.SecretsStoreExtension\tests\Azure.ResourceManager.SecretsStoreExtension.Tests.csproj::TargetFramework=net8.0]
+D:\work\azure-sdk-for-net\sdk\secretsstoreextension\Azure.ResourceManager.SecretsStoreExtension\tests\SecretSyncTests.cs(121,21): error CS1739: The best overload for 'SecretSyncUpdateProperties' does not have a parameter named 'serializedAdditionalRawData' [D:\work\azure-sdk-for-net\sdk\secretsstoreextension\Azure.ResourceManager.SecretsStoreExtension\tests\Azure.ResourceManager.SecretsStoreExtension.Tests.csproj::TargetFramework=net462]
+    0 Warning(s)
+    3 Error(s)
+
+Time Elapsed 00:00:09.76

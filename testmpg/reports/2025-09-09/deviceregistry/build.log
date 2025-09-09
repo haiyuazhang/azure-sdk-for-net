@@ -1,0 +1,13 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+D:\work\azure-sdk-for-net\sdk\deviceregistry\Azure.ResourceManager.DeviceRegistry\src\Generated\ArmDeviceRegistryModelFactory.cs(1235,209): error CS1737: Optional parameters must appear after all required parameters [D:\work\azure-sdk-for-net\sdk\deviceregistry\Azure.ResourceManager.DeviceRegistry\src\Azure.ResourceManager.DeviceRegistry.csproj::TargetFramework=netstandard2.0]
+D:\work\azure-sdk-for-net\sdk\deviceregistry\Azure.ResourceManager.DeviceRegistry\src\Generated\ArmDeviceRegistryModelFactory.cs(1235,209): error CS1737: Optional parameters must appear after all required parameters [D:\work\azure-sdk-for-net\sdk\deviceregistry\Azure.ResourceManager.DeviceRegistry\src\Azure.ResourceManager.DeviceRegistry.csproj::TargetFramework=net8.0]
+
+Build FAILED.
+
+D:\work\azure-sdk-for-net\sdk\deviceregistry\Azure.ResourceManager.DeviceRegistry\src\Generated\ArmDeviceRegistryModelFactory.cs(1235,209): error CS1737: Optional parameters must appear after all required parameters [D:\work\azure-sdk-for-net\sdk\deviceregistry\Azure.ResourceManager.DeviceRegistry\src\Azure.ResourceManager.DeviceRegistry.csproj::TargetFramework=netstandard2.0]
+D:\work\azure-sdk-for-net\sdk\deviceregistry\Azure.ResourceManager.DeviceRegistry\src\Generated\ArmDeviceRegistryModelFactory.cs(1235,209): error CS1737: Optional parameters must appear after all required parameters [D:\work\azure-sdk-for-net\sdk\deviceregistry\Azure.ResourceManager.DeviceRegistry\src\Azure.ResourceManager.DeviceRegistry.csproj::TargetFramework=net8.0]
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:02.17

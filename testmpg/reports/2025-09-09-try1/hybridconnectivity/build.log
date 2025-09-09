@@ -1,0 +1,20 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Ran ApiCompat against c:\NUGET_PACKAGES\azure.resourcemanager.hybridconnectivity\1.1.0\lib\netstandard2.0\Azure.ResourceManager.HybridConnectivity.dll using assemblies from D:\work\azure-sdk-for-net\artifacts\obj\Azure.ResourceManager.HybridConnectivity\Debug\netstandard2.0\
+  Ran ApiCompat against c:\NUGET_PACKAGES\azure.resourcemanager.hybridconnectivity\1.1.0\lib\netstandard2.0\Azure.ResourceManager.HybridConnectivity.dll using assemblies from D:\work\azure-sdk-for-net\artifacts\obj\Azure.ResourceManager.HybridConnectivity\Debug\net8.0\
+  InheritDocTask replaced 297 of 297 inheritdoc tags and removed 45 private member docs in D:\work\azure-sdk-for-net\artifacts\obj\Azure.ResourceManager.HybridConnectivity\Debug\netstandard2.0\Azure.ResourceManager.HybridConnectivity.xml
+  Azure.ResourceManager.HybridConnectivity -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.ResourceManager.HybridConnectivity\Debug\netstandard2.0\Azure.ResourceManager.HybridConnectivity.dll
+  InheritDocTask replaced 297 of 297 inheritdoc tags and removed 45 private member docs in D:\work\azure-sdk-for-net\artifacts\obj\Azure.ResourceManager.HybridConnectivity\Debug\net8.0\Azure.ResourceManager.HybridConnectivity.xml
+  Azure.ResourceManager.HybridConnectivity -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.ResourceManager.HybridConnectivity\Debug\net8.0\Azure.ResourceManager.HybridConnectivity.dll
+  Azure.Core.TestFramework -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Core.TestFramework\Debug\net8.0\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Core.TestFramework\Debug\net462\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Core.TestFramework\Debug\net9.0\Azure.Core.TestFramework.dll
+  Azure.ResourceManager.HybridConnectivity.Tests -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.ResourceManager.HybridConnectivity.Tests\Debug\net462\Azure.ResourceManager.HybridConnectivity.Tests.dll
+  Azure.ResourceManager.HybridConnectivity.Tests -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.ResourceManager.HybridConnectivity.Tests\Debug\net9.0\Azure.ResourceManager.HybridConnectivity.Tests.dll
+  Azure.ResourceManager.HybridConnectivity.Tests -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.ResourceManager.HybridConnectivity.Tests\Debug\net8.0\Azure.ResourceManager.HybridConnectivity.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:07.59

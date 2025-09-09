@@ -1,0 +1,192 @@
+  Determining projects to restore...
+  Restored D:\work\azure-sdk-for-net\sdk\informaticadatamanagement\Azure.ResourceManager.InformaticaDataManagement\src\Azure.ResourceManager.InformaticaDataManagement.csproj (in 663 ms).
+  Restored D:\work\azure-sdk-for-net\sdk\informaticadatamanagement\Azure.ResourceManager.InformaticaDataManagement\tests\Azure.ResourceManager.InformaticaDataManagement.Tests.csproj (in 848 ms).
+  1 of 3 projects are up-to-date for restore.
+  npm warn EBADENGINE Unsupported engine {
+  npm warn EBADENGINE   package: 'yargs@18.0.0',
+  npm warn EBADENGINE   required: { node: '^20.19.0 || ^22.12.0 || >=23' },
+  npm warn EBADENGINE   current: { node: 'v20.18.3', npm: '10.8.2' }
+  npm warn EBADENGINE }
+  npm warn EBADENGINE Unsupported engine {
+  npm warn EBADENGINE   package: 'yargs-parser@22.0.0',
+  npm warn EBADENGINE   required: { node: '^20.19.0 || ^22.12.0 || >=23' },
+  npm warn EBADENGINE   current: { node: 'v20.18.3', npm: '10.8.2' }
+  npm warn EBADENGINE }
+  
+  changed 1 package in 5s
+  
+  30 packages are looking for funding
+    run `npm fund` for details
+  Using output directory 'D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/'
+  
+  888                                      888 d8b                   888    
+  888                                      888 Y8P                   888    
+  888                                      888                       888    
+  888888 .d8888b  88888b.          .d8888b 888 888  .d88b.  88888b.  888888 
+  888    88K      888 "88b        d88P"    888 888 d8P  Y8b 888 "88b 888    
+  888    "Y8888b. 888  888 888888 888      888 888 88888888 888  888 888    
+  Y88b.       X88 888 d88P        Y88b.    888 888 Y8b.     888  888 Y88b.  
+   "Y888  88888P' 88888P"          "Y8888P 888 888  "Y8888  888  888  "Y888 
+                  888                                                       
+                  888                                                       
+                  888                                                       
+  
+  0.28.1
+  NOTE: A path to a local spec was provided, will generate based off of local files...
+  Local spec repo root is D:/work/spec
+  Found emitter package @azure-typespec/http-client-csharp-mgmt@1.0.0-alpha.20250814.2
+  Installing dependencies from npm...
+  npm warn EBADENGINE Unsupported engine {
+  npm warn EBADENGINE   package: 'yargs@18.0.0',
+  npm warn EBADENGINE   required: { node: '^20.19.0 || ^22.12.0 || >=23' },
+  npm warn EBADENGINE   current: { node: 'v20.18.3', npm: '10.8.2' }
+  npm warn EBADENGINE }
+  npm warn EBADENGINE Unsupported engine {
+  npm warn EBADENGINE   package: 'yargs-parser@22.0.0',
+  npm warn EBADENGINE   required: { node: '^20.19.0 || ^22.12.0 || >=23' },
+  npm warn EBADENGINE   current: { node: 'v20.18.3', npm: '10.8.2' }
+  npm warn EBADENGINE }
+  
+  added 122 packages, and audited 123 packages in 1m
+  
+  25 packages are looking for funding
+    run `npm fund` for details
+  
+  32 critical severity vulnerabilities
+  
+  To address issues that do not require attention, run:
+    npm audit fix
+  
+  To address all issues (including breaking changes), run:
+    npm audit fix --force
+  
+  Run `npm audit` for details.
+  'grep' is not recognized as an internal or external command,
+  operable program or batch file.
+  Resolved path: D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/TempTypeSpecFiles/node_modules/@typespec/compiler
+  Compiling tsp using @azure-typespec/http-client-csharp-mgmt...
+  update
+  
+  Sync and generate from a TypeSpec project
+  
+  Options:
+    -d, --debug            Enable debug logging                          [boolean]
+    -o, --output-dir       Specify an alternate output directory for the generated
+                           files.                          [string] [default: "."]
+    -y, --no-prompt        Skip any interactive prompts.                 [boolean]
+        --help             Show help                                     [boolean]
+        --repo             Repository where the project is defined        [string]
+        --commit           Commit hash to be used                         [string]
+        --tsp-config       Path to tspconfig.yaml                         [string]
+        --local-spec-repo  Path to local spec repo                        [string]
+        --emitter-options  The options to pass to the emitter             [string]
+        --save-inputs      Don't clean up the temp directory after generation
+                                                                         [boolean]
+        --skip-install     Skip installing dependencies                  [boolean]
+        --trace            Enable tracing during compile                   [array]
+    -v, --version          Show version number                           [boolean]
+  
+  ExternalError: Emitter "@azure-typespec/http-client-csharp-mgmt" crashed! This is a bug.
+  Please file an issue at https://github.com/azure-sdk/azure-sdk-for-net/issues
+  
+Error : error : Failed to generate the library. Exit code: 1. [D:\work\azure-sdk-for-net\sdk\informaticadatamanagement\Azure.ResourceManager.InformaticaDataManagement\src\Azure.ResourceManager.InformaticaDataManagement.csproj]
+  StackTrace: 
+  An item with the same key has already been added. Key: Microsoft.TypeSpec.Generator.ClientModel.Providers.MrwSerializationTypeDefinition
+     at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+     at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+     at Azure.Generator.Management.Visitors.NameVisitor.UpdateSerialization(ModelProvider type, String newName, String originalName) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Visitors/NameVisitor.cs:line 110
+     at Azure.Generator.Management.Visitors.NameVisitor.PreVisitModel(InputModelType model, ModelProvider type) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Visitors/NameVisitor.cs:line 91
+     at Microsoft.TypeSpec.Generator.TypeFactory.CreateModel(InputModelType model)
+     at Azure.Generator.Management.Visitors.SafeFlattenVisitor.PreVisitModel(InputModelType model, ModelProvider type) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Visitors/SafeFlattenVisitor.cs:line 41
+     at Microsoft.TypeSpec.Generator.TypeFactory.CreateModel(InputModelType model)
+     at Azure.Generator.Management.Visitors.SafeFlattenVisitor.PreVisitModel(InputModelType model, ModelProvider type) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Visitors/SafeFlattenVisitor.cs:line 41
+     at Microsoft.TypeSpec.Generator.TypeFactory.CreateModel(InputModelType model)
+     at Microsoft.TypeSpec.Generator.OutputLibrary.BuildModels()
+     at Microsoft.TypeSpec.Generator.OutputLibrary.BuildTypeProviders()
+     at Microsoft.TypeSpec.Generator.ClientModel.ScmOutputLibrary.BuildTypeProviders()
+     at Azure.Generator.AzureOutputLibrary.BuildTypeProviders()
+     at Azure.Generator.Management.ManagementOutputLibrary.BuildTypeProviders() in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/ManagementOutputLibrary.cs:line 228
+     at Microsoft.TypeSpec.Generator.OutputLibrary.get_TypeProviders()
+     at Microsoft.TypeSpec.Generator.LibraryVisitor.VisitLibrary(OutputLibrary library)
+     at Microsoft.TypeSpec.Generator.CSharpGen.ExecuteAsync()
+     at Microsoft.TypeSpec.Generator.GeneratorRunner.RunAsync(CommandLineOptions options)
+     at Microsoft.TypeSpec.Generator.Program.Run(CommandLineOptions options, GeneratorRunner runner)
+  
+      at $onEmit (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/TempTypeSpecFiles/node_modules/@typespec/http-client-csharp/dist/emitter/src/emitter.js:88:27)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async $onEmit (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/TempTypeSpecFiles/node_modules/@azure-typespec/http-client-csharp/dist/emitter/src/emitter.js:29:5)
+      at async Object.$onEmit [as emitFunction] (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/TempTypeSpecFiles/node_modules/@azure-typespec/http-client-csharp-mgmt/dist/emitter/emitter.js:12:5)
+      at async runEmitter (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:711:9)
+      at async file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:684:9
+      at async emit (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:682:12)
+      at async compile (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:53:30)
+      at async compileTsp (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/node_modules/@azure-tools/typespec-client-generator-cli/dist/typespec.js:129:21)
+      at async generateCommand (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/node_modules/@azure-tools/typespec-client-generator-cli/dist/commands.js:352:20)
+  
+  --------------------------------------------------
+  Library Version                1.0.0-alpha.20250814.2
+  TypeSpec Compiler Version      1.3.0
+  --------------------------------------------------
+      at runEmitter (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:714:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:684:9
+      at async emit (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:682:12)
+      at async compile (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:53:30)
+      at async compileTsp (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/node_modules/@azure-tools/typespec-client-generator-cli/dist/typespec.js:129:21)
+      at async generateCommand (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/node_modules/@azure-tools/typespec-client-generator-cli/dist/commands.js:352:20)
+      at async updateCommand (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/node_modules/@azure-tools/typespec-client-generator-cli/dist/commands.js:401:5)
+      at async Object.handler (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/node_modules/@azure-tools/typespec-client-generator-cli/dist/index.js:190:5) {
+    info: {
+      kind: 'emitter',
+      metadata: {
+        type: 'module',
+        name: '@azure-typespec/http-client-csharp-mgmt',
+        bugs: [Object],
+        version: '1.0.0-alpha.20250814.2'
+      },
+error : error : Error: Failed to generate the library. Exit code: 1. [D:\work\azure-sdk-for-net\sdk\informaticadatamanagement\Azure.ResourceManager.InformaticaDataManagement\src\Azure.ResourceManager.InformaticaDataManagement.csproj]
+      StackTrace: 
+      An item with the same key has already been added. Key: Microsoft.TypeSpec.Generator.ClientModel.Providers.MrwSerializationTypeDefinition
+         at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+         at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+         at Azure.Generator.Management.Visitors.NameVisitor.UpdateSerialization(ModelProvider type, String newName, String originalName) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Visitors/NameVisitor.cs:line 110
+         at Azure.Generator.Management.Visitors.NameVisitor.PreVisitModel(InputModelType model, ModelProvider type) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Visitors/NameVisitor.cs:line 91
+         at Microsoft.TypeSpec.Generator.TypeFactory.CreateModel(InputModelType model)
+         at Azure.Generator.Management.Visitors.SafeFlattenVisitor.PreVisitModel(InputModelType model, ModelProvider type) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Visitors/SafeFlattenVisitor.cs:line 41
+         at Microsoft.TypeSpec.Generator.TypeFactory.CreateModel(InputModelType model)
+         at Azure.Generator.Management.Visitors.SafeFlattenVisitor.PreVisitModel(InputModelType model, ModelProvider type) in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/Visitors/SafeFlattenVisitor.cs:line 41
+         at Microsoft.TypeSpec.Generator.TypeFactory.CreateModel(InputModelType model)
+         at Microsoft.TypeSpec.Generator.OutputLibrary.BuildModels()
+         at Microsoft.TypeSpec.Generator.OutputLibrary.BuildTypeProviders()
+         at Microsoft.TypeSpec.Generator.ClientModel.ScmOutputLibrary.BuildTypeProviders()
+         at Azure.Generator.AzureOutputLibrary.BuildTypeProviders()
+         at Azure.Generator.Management.ManagementOutputLibrary.BuildTypeProviders() in /mnt/vss/_work/1/s/eng/packages/http-client-csharp-mgmt/generator/Azure.Generator.Management/src/ManagementOutputLibrary.cs:line 228
+         at Microsoft.TypeSpec.Generator.OutputLibrary.get_TypeProviders()
+         at Microsoft.TypeSpec.Generator.LibraryVisitor.VisitLibrary(OutputLibrary library)
+         at Microsoft.TypeSpec.Generator.CSharpGen.ExecuteAsync()
+         at Microsoft.TypeSpec.Generator.GeneratorRunner.RunAsync(CommandLineOptions options)
+         at Microsoft.TypeSpec.Generator.Program.Run(CommandLineOptions options, GeneratorRunner runner)
+      
+          at $onEmit (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/TempTypeSpecFiles/node_modules/@typespec/http-client-csharp/dist/emitter/src/emitter.js:88:27)
+          at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+          at async $onEmit (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/TempTypeSpecFiles/node_modules/@azure-typespec/http-client-csharp/dist/emitter/src/emitter.js:29:5)
+          at async Object.$onEmit [as emitFunction] (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/TempTypeSpecFiles/node_modules/@azure-typespec/http-client-csharp-mgmt/dist/emitter/emitter.js:12:5)
+          at async runEmitter (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:711:9)
+          at async file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:684:9
+          at async emit (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:682:12)
+          at async compile (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/TempTypeSpecFiles/node_modules/@typespec/compiler/dist/src/core/program.js:53:30)
+          at async compileTsp (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/node_modules/@azure-tools/typespec-client-generator-cli/dist/typespec.js:129:21)
+          at async generateCommand (file:///D:/work/azure-sdk-for-net/sdk/informaticadatamanagement/Azure.ResourceManager.InformaticaDataManagement/node_modules/@azure-tools/typespec-client-generator-cli/dist/commands.js:352:20)
+    }
+  }
+c:\NUGET_PACKAGES\microsoft.azure.autorest.csharp\3.0.0-beta.20250728.3\buildMultiTargeting\Microsoft.Azure.AutoRest.CSharp.targets(66,5): error MSB3073: The command "npx --no-install --package=@azure-tools/typespec-client-generator-cli --yes tsp-client update --no-prompt --output-dir D:\work\azure-sdk-for-net\sdk\informaticadatamanagement\Azure.ResourceManager.InformaticaDataManagement\src/../ --save-inputs --local-spec-repo D:\work\spec\specification\informatica\Informatica.DataManagement.Management  " exited with code 1. [D:\work\azure-sdk-for-net\sdk\informaticadatamanagement\Azure.ResourceManager.InformaticaDataManagement\src\Azure.ResourceManager.InformaticaDataManagement.csproj]
+
+Build FAILED.
+
+Error : error : Failed to generate the library. Exit code: 1. [D:\work\azure-sdk-for-net\sdk\informaticadatamanagement\Azure.ResourceManager.InformaticaDataManagement\src\Azure.ResourceManager.InformaticaDataManagement.csproj]
+error : error : Error: Failed to generate the library. Exit code: 1. [D:\work\azure-sdk-for-net\sdk\informaticadatamanagement\Azure.ResourceManager.InformaticaDataManagement\src\Azure.ResourceManager.InformaticaDataManagement.csproj]
+c:\NUGET_PACKAGES\microsoft.azure.autorest.csharp\3.0.0-beta.20250728.3\buildMultiTargeting\Microsoft.Azure.AutoRest.CSharp.targets(66,5): error MSB3073: The command "npx --no-install --package=@azure-tools/typespec-client-generator-cli --yes tsp-client update --no-prompt --output-dir D:\work\azure-sdk-for-net\sdk\informaticadatamanagement\Azure.ResourceManager.InformaticaDataManagement\src/../ --save-inputs --local-spec-repo D:\work\spec\specification\informatica\Informatica.DataManagement.Management  " exited with code 1. [D:\work\azure-sdk-for-net\sdk\informaticadatamanagement\Azure.ResourceManager.InformaticaDataManagement\src\Azure.ResourceManager.InformaticaDataManagement.csproj]
+    0 Warning(s)
+    3 Error(s)
+
+Time Elapsed 00:01:41.12
