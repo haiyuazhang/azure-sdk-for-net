@@ -1,0 +1,17 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+D:\work\azure-sdk-for-net\sdk\standbypool\Azure.ResourceManager.StandbyPool\src\Custom\Models\ContainerGroupInstanceCountSummary.cs(23,13): error CS0103: The name '_serializedAdditionalRawData' does not exist in the current context [D:\work\azure-sdk-for-net\sdk\standbypool\Azure.ResourceManager.StandbyPool\src\Azure.ResourceManager.StandbyPool.csproj::TargetFramework=netstandard2.0]
+D:\work\azure-sdk-for-net\sdk\standbypool\Azure.ResourceManager.StandbyPool\src\Custom\Models\StandbyVirtualMachineInstanceCountSummary.cs(31,13): error CS0103: The name '_serializedAdditionalRawData' does not exist in the current context [D:\work\azure-sdk-for-net\sdk\standbypool\Azure.ResourceManager.StandbyPool\src\Azure.ResourceManager.StandbyPool.csproj::TargetFramework=netstandard2.0]
+D:\work\azure-sdk-for-net\sdk\standbypool\Azure.ResourceManager.StandbyPool\src\Custom\Models\ContainerGroupInstanceCountSummary.cs(23,13): error CS0103: The name '_serializedAdditionalRawData' does not exist in the current context [D:\work\azure-sdk-for-net\sdk\standbypool\Azure.ResourceManager.StandbyPool\src\Azure.ResourceManager.StandbyPool.csproj::TargetFramework=net8.0]
+D:\work\azure-sdk-for-net\sdk\standbypool\Azure.ResourceManager.StandbyPool\src\Custom\Models\StandbyVirtualMachineInstanceCountSummary.cs(31,13): error CS0103: The name '_serializedAdditionalRawData' does not exist in the current context [D:\work\azure-sdk-for-net\sdk\standbypool\Azure.ResourceManager.StandbyPool\src\Azure.ResourceManager.StandbyPool.csproj::TargetFramework=net8.0]
+
+Build FAILED.
+
+D:\work\azure-sdk-for-net\sdk\standbypool\Azure.ResourceManager.StandbyPool\src\Custom\Models\ContainerGroupInstanceCountSummary.cs(23,13): error CS0103: The name '_serializedAdditionalRawData' does not exist in the current context [D:\work\azure-sdk-for-net\sdk\standbypool\Azure.ResourceManager.StandbyPool\src\Azure.ResourceManager.StandbyPool.csproj::TargetFramework=netstandard2.0]
+D:\work\azure-sdk-for-net\sdk\standbypool\Azure.ResourceManager.StandbyPool\src\Custom\Models\StandbyVirtualMachineInstanceCountSummary.cs(31,13): error CS0103: The name '_serializedAdditionalRawData' does not exist in the current context [D:\work\azure-sdk-for-net\sdk\standbypool\Azure.ResourceManager.StandbyPool\src\Azure.ResourceManager.StandbyPool.csproj::TargetFramework=netstandard2.0]
+D:\work\azure-sdk-for-net\sdk\standbypool\Azure.ResourceManager.StandbyPool\src\Custom\Models\ContainerGroupInstanceCountSummary.cs(23,13): error CS0103: The name '_serializedAdditionalRawData' does not exist in the current context [D:\work\azure-sdk-for-net\sdk\standbypool\Azure.ResourceManager.StandbyPool\src\Azure.ResourceManager.StandbyPool.csproj::TargetFramework=net8.0]
+D:\work\azure-sdk-for-net\sdk\standbypool\Azure.ResourceManager.StandbyPool\src\Custom\Models\StandbyVirtualMachineInstanceCountSummary.cs(31,13): error CS0103: The name '_serializedAdditionalRawData' does not exist in the current context [D:\work\azure-sdk-for-net\sdk\standbypool\Azure.ResourceManager.StandbyPool\src\Azure.ResourceManager.StandbyPool.csproj::TargetFramework=net8.0]
+    0 Warning(s)
+    4 Error(s)
+
+Time Elapsed 00:00:03.21

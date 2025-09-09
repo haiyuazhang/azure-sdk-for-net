@@ -19,25 +19,17 @@ foreach ($dir in $targetDirs) {
     Write-Output "🔍 Checking: $($dir.FullName)"
 
     $tspFile = Join-Path $dir.FullName "tsp-location.yaml"
-    $generatedPath = Join-Path $dir.FullName "src/generated"
 
     if (Test-Path $tspFile -PathType Leaf) {
         Write-Output "   ✅ Found tsp-location.yaml"
 
-        if (Test-Path $generatedPath) {
-            Write-Output "   📂 Found src/generated"
-            $resourceFiles = Get-ChildItem -Path $generatedPath -Filter "*Resource.cs" -File -Recurse -ErrorAction SilentlyContinue
-            if ($resourceFiles.Count -gt 0) {
-                Write-Output "   ✅ Found at least one *Resource.cs"
-                $absolutePath = $dir.FullName
-                $absolutePath | Out-File -FilePath $outputFile -Append
-            }
-            else {
-                Write-Output "   ⚠️ No *Resource.cs found"
-            }
+        if ($dir.FullName -like "*Azure.ResourceManager*") {
+            Write-Output "   ✅ Directory path contains Azure.ResourceManager"
+            $absolutePath = $dir.FullName
+            $absolutePath | Out-File -FilePath $outputFile -Append
         }
         else {
-            Write-Output "   ❌ No src/generated directory"
+            Write-Output "   ⚠️ Directory path does not contain Azure.ResourceManager"
         }
     }
     else {

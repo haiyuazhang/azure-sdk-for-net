@@ -1,0 +1,25 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Azure.Core.TestFramework -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Core.TestFramework\Debug\net9.0\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Core.TestFramework\Debug\net462\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Core.TestFramework\Debug\net47\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Core.TestFramework\Debug\net8.0\Azure.Core.TestFramework.dll
+  InheritDocTask replaced 495 of 495 inheritdoc tags and removed 55 private member docs in D:\work\azure-sdk-for-net\artifacts\obj\Azure.Analytics.Defender.Easm\Debug\netstandard2.0\Azure.Analytics.Defender.Easm.xml
+  Azure.Analytics.Defender.Easm -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Analytics.Defender.Easm\Debug\netstandard2.0\Azure.Analytics.Defender.Easm.dll
+  InheritDocTask replaced 495 of 495 inheritdoc tags and removed 55 private member docs in D:\work\azure-sdk-for-net\artifacts\obj\Azure.Analytics.Defender.Easm\Debug\net8.0\Azure.Analytics.Defender.Easm.xml
+  Azure.Analytics.Defender.Easm -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Analytics.Defender.Easm\Debug\net8.0\Azure.Analytics.Defender.Easm.dll
+  Azure.Analytics.Defender.Easm.Tests -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Analytics.Defender.Easm.Tests\Debug\net462\Azure.Analytics.Defender.Easm.Tests.dll
+  Azure.Analytics.Defender.Easm.Tests -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Analytics.Defender.Easm.Tests\Debug\net9.0\Azure.Analytics.Defender.Easm.Tests.dll
+  Azure.Test.Perf -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Test.Perf\Debug\net462\Azure.Test.Perf.dll
+  Azure.Analytics.Defender.Easm.Tests -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Analytics.Defender.Easm.Tests\Debug\net8.0\Azure.Analytics.Defender.Easm.Tests.dll
+  Azure.Test.Perf -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Test.Perf\Debug\net8.0\Azure.Test.Perf.dll
+  Azure.Test.Perf -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Test.Perf\Debug\net9.0\Azure.Test.Perf.dll
+  Azure.Analytics.Defender.Easm.Perf -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Analytics.Defender.Easm.Perf\Debug\net462\Azure.Analytics.Defender.Easm.Perf.exe
+  Azure.Analytics.Defender.Easm.Perf -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Analytics.Defender.Easm.Perf\Debug\net9.0\Azure.Analytics.Defender.Easm.Perf.dll
+  Azure.Analytics.Defender.Easm.Perf -> D:\work\azure-sdk-for-net\artifacts\bin\Azure.Analytics.Defender.Easm.Perf\Debug\net8.0\Azure.Analytics.Defender.Easm.Perf.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:09.84
