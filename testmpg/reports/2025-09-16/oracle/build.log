@@ -1,0 +1,13 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+D:\work\sdk2\sdk\oracle\Azure.ResourceManager.OracleDatabase\src\Generated\ArmOracleDatabaseModelFactory.cs(2274,53): error CS0111: Type 'ArmOracleDatabaseModelFactory' already defines a member called 'AutonomousDBVersionProperties' with the same parameter types [D:\work\sdk2\sdk\oracle\Azure.ResourceManager.OracleDatabase\src\Azure.ResourceManager.OracleDatabase.csproj::TargetFramework=net8.0]
+D:\work\sdk2\sdk\oracle\Azure.ResourceManager.OracleDatabase\src\Generated\ArmOracleDatabaseModelFactory.cs(2274,53): error CS0111: Type 'ArmOracleDatabaseModelFactory' already defines a member called 'AutonomousDBVersionProperties' with the same parameter types [D:\work\sdk2\sdk\oracle\Azure.ResourceManager.OracleDatabase\src\Azure.ResourceManager.OracleDatabase.csproj::TargetFramework=netstandard2.0]
+
+Build FAILED.
+
+D:\work\sdk2\sdk\oracle\Azure.ResourceManager.OracleDatabase\src\Generated\ArmOracleDatabaseModelFactory.cs(2274,53): error CS0111: Type 'ArmOracleDatabaseModelFactory' already defines a member called 'AutonomousDBVersionProperties' with the same parameter types [D:\work\sdk2\sdk\oracle\Azure.ResourceManager.OracleDatabase\src\Azure.ResourceManager.OracleDatabase.csproj::TargetFramework=net8.0]
+D:\work\sdk2\sdk\oracle\Azure.ResourceManager.OracleDatabase\src\Generated\ArmOracleDatabaseModelFactory.cs(2274,53): error CS0111: Type 'ArmOracleDatabaseModelFactory' already defines a member called 'AutonomousDBVersionProperties' with the same parameter types [D:\work\sdk2\sdk\oracle\Azure.ResourceManager.OracleDatabase\src\Azure.ResourceManager.OracleDatabase.csproj::TargetFramework=netstandard2.0]
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:02.35

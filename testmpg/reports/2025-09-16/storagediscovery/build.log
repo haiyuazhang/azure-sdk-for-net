@@ -1,0 +1,18 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  InheritDocTask replaced 49 of 49 inheritdoc tags and removed 28 private member docs in D:\work\sdk2\artifacts\obj\Azure.ResourceManager.StorageDiscovery\Debug\netstandard2.0\Azure.ResourceManager.StorageDiscovery.xml
+  Azure.ResourceManager.StorageDiscovery -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.StorageDiscovery\Debug\netstandard2.0\Azure.ResourceManager.StorageDiscovery.dll
+  InheritDocTask replaced 49 of 49 inheritdoc tags and removed 28 private member docs in D:\work\sdk2\artifacts\obj\Azure.ResourceManager.StorageDiscovery\Debug\net8.0\Azure.ResourceManager.StorageDiscovery.xml
+  Azure.ResourceManager.StorageDiscovery -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.StorageDiscovery\Debug\net8.0\Azure.ResourceManager.StorageDiscovery.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net9.0\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net8.0\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net462\Azure.Core.TestFramework.dll
+  Azure.ResourceManager.StorageDiscovery.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.StorageDiscovery.Tests\Debug\net462\Azure.ResourceManager.StorageDiscovery.Tests.dll
+  Azure.ResourceManager.StorageDiscovery.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.StorageDiscovery.Tests\Debug\net9.0\Azure.ResourceManager.StorageDiscovery.Tests.dll
+  Azure.ResourceManager.StorageDiscovery.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.StorageDiscovery.Tests\Debug\net8.0\Azure.ResourceManager.StorageDiscovery.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:05.25

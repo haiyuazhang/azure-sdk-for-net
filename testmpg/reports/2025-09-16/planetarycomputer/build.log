@@ -1,0 +1,18 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  InheritDocTask replaced 49 of 49 inheritdoc tags and removed 34 private member docs in D:\work\sdk2\artifacts\obj\Azure.ResourceManager.PlanetaryComputer\Debug\net8.0\Azure.ResourceManager.PlanetaryComputer.xml
+  Azure.ResourceManager.PlanetaryComputer -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.PlanetaryComputer\Debug\net8.0\Azure.ResourceManager.PlanetaryComputer.dll
+  InheritDocTask replaced 49 of 49 inheritdoc tags and removed 34 private member docs in D:\work\sdk2\artifacts\obj\Azure.ResourceManager.PlanetaryComputer\Debug\netstandard2.0\Azure.ResourceManager.PlanetaryComputer.xml
+  Azure.ResourceManager.PlanetaryComputer -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.PlanetaryComputer\Debug\netstandard2.0\Azure.ResourceManager.PlanetaryComputer.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net462\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net9.0\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net8.0\Azure.Core.TestFramework.dll
+  Azure.ResourceManager.PlanetaryComputer.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.PlanetaryComputer.Tests\Debug\net9.0\Azure.ResourceManager.PlanetaryComputer.Tests.dll
+  Azure.ResourceManager.PlanetaryComputer.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.PlanetaryComputer.Tests\Debug\net462\Azure.ResourceManager.PlanetaryComputer.Tests.dll
+  Azure.ResourceManager.PlanetaryComputer.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.PlanetaryComputer.Tests\Debug\net8.0\Azure.ResourceManager.PlanetaryComputer.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:13.43

@@ -1,4 +1,4 @@
-$basePath = "D:\work\azure-sdk-for-net\sdk"
+$basePath = "D:\work\sdk2\sdk"
 
 
 $today = Get-Date -Format "yyyy-MM-dd"
