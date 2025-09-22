@@ -1,6 +1,1 @@
 D:\work\sdk2\sdk\selfhelp\Azure.ResourceManager.SelfHelp
-D:\work\sdk2\sdk\azurestackhci\Azure.ResourceManager.Hci.Vm
-D:\work\sdk2\sdk\hardwaresecuritymodules\Azure.ResourceManager.HardwareSecurityModules
-D:\work\sdk2\sdk\avs\Azure.ResourceManager.Avs
-D:\work\sdk2\sdk\servicefabricmanagedclusters\Azure.ResourceManager.ServiceFabricManagedClusters
-D:\work\sdk2\sdk\servicenetworking\Azure.ResourceManager.ServiceNetworking

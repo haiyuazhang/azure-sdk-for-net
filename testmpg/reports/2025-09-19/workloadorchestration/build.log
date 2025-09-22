@@ -1,0 +1,13 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+D:\work\sdk2\sdk\workloadorchestration\Azure.ResourceManager.WorkloadOrchestration\src\Generated\Models\EdgeJobProperties.cs(88,31): error CS0102: The type 'EdgeJobProperties' already contains a definition for 'JobType' [D:\work\sdk2\sdk\workloadorchestration\Azure.ResourceManager.WorkloadOrchestration\src\Azure.ResourceManager.WorkloadOrchestration.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\workloadorchestration\Azure.ResourceManager.WorkloadOrchestration\src\Generated\Models\EdgeJobProperties.cs(88,31): error CS0102: The type 'EdgeJobProperties' already contains a definition for 'JobType' [D:\work\sdk2\sdk\workloadorchestration\Azure.ResourceManager.WorkloadOrchestration\src\Azure.ResourceManager.WorkloadOrchestration.csproj::TargetFramework=net8.0]
+
+Build FAILED.
+
+D:\work\sdk2\sdk\workloadorchestration\Azure.ResourceManager.WorkloadOrchestration\src\Generated\Models\EdgeJobProperties.cs(88,31): error CS0102: The type 'EdgeJobProperties' already contains a definition for 'JobType' [D:\work\sdk2\sdk\workloadorchestration\Azure.ResourceManager.WorkloadOrchestration\src\Azure.ResourceManager.WorkloadOrchestration.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\workloadorchestration\Azure.ResourceManager.WorkloadOrchestration\src\Generated\Models\EdgeJobProperties.cs(88,31): error CS0102: The type 'EdgeJobProperties' already contains a definition for 'JobType' [D:\work\sdk2\sdk\workloadorchestration\Azure.ResourceManager.WorkloadOrchestration\src\Azure.ResourceManager.WorkloadOrchestration.csproj::TargetFramework=net8.0]
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:02.46

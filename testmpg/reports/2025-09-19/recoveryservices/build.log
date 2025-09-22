@@ -1,0 +1,17 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+D:\work\sdk2\sdk\recoveryservices\Azure.ResourceManager.RecoveryServices\src\Generated\ArmRecoveryServicesModelFactory.cs(319,153): error CS1737: Optional parameters must appear after all required parameters [D:\work\sdk2\sdk\recoveryservices\Azure.ResourceManager.RecoveryServices\src\Azure.ResourceManager.RecoveryServices.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\recoveryservices\Azure.ResourceManager.RecoveryServices\src\Generated\ArmRecoveryServicesModelFactory.cs(327,161): error CS1737: Optional parameters must appear after all required parameters [D:\work\sdk2\sdk\recoveryservices\Azure.ResourceManager.RecoveryServices\src\Azure.ResourceManager.RecoveryServices.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\recoveryservices\Azure.ResourceManager.RecoveryServices\src\Generated\ArmRecoveryServicesModelFactory.cs(319,153): error CS1737: Optional parameters must appear after all required parameters [D:\work\sdk2\sdk\recoveryservices\Azure.ResourceManager.RecoveryServices\src\Azure.ResourceManager.RecoveryServices.csproj::TargetFramework=net8.0]
+D:\work\sdk2\sdk\recoveryservices\Azure.ResourceManager.RecoveryServices\src\Generated\ArmRecoveryServicesModelFactory.cs(327,161): error CS1737: Optional parameters must appear after all required parameters [D:\work\sdk2\sdk\recoveryservices\Azure.ResourceManager.RecoveryServices\src\Azure.ResourceManager.RecoveryServices.csproj::TargetFramework=net8.0]
+
+Build FAILED.
+
+D:\work\sdk2\sdk\recoveryservices\Azure.ResourceManager.RecoveryServices\src\Generated\ArmRecoveryServicesModelFactory.cs(319,153): error CS1737: Optional parameters must appear after all required parameters [D:\work\sdk2\sdk\recoveryservices\Azure.ResourceManager.RecoveryServices\src\Azure.ResourceManager.RecoveryServices.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\recoveryservices\Azure.ResourceManager.RecoveryServices\src\Generated\ArmRecoveryServicesModelFactory.cs(327,161): error CS1737: Optional parameters must appear after all required parameters [D:\work\sdk2\sdk\recoveryservices\Azure.ResourceManager.RecoveryServices\src\Azure.ResourceManager.RecoveryServices.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\recoveryservices\Azure.ResourceManager.RecoveryServices\src\Generated\ArmRecoveryServicesModelFactory.cs(319,153): error CS1737: Optional parameters must appear after all required parameters [D:\work\sdk2\sdk\recoveryservices\Azure.ResourceManager.RecoveryServices\src\Azure.ResourceManager.RecoveryServices.csproj::TargetFramework=net8.0]
+D:\work\sdk2\sdk\recoveryservices\Azure.ResourceManager.RecoveryServices\src\Generated\ArmRecoveryServicesModelFactory.cs(327,161): error CS1737: Optional parameters must appear after all required parameters [D:\work\sdk2\sdk\recoveryservices\Azure.ResourceManager.RecoveryServices\src\Azure.ResourceManager.RecoveryServices.csproj::TargetFramework=net8.0]
+    0 Warning(s)
+    4 Error(s)
+
+Time Elapsed 00:00:03.05

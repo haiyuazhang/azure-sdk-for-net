@@ -1,0 +1,20 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Ran ApiCompat against c:\NUGET_PACKAGES\azure.resourcemanager.lambdatesthyperexecute\1.0.0\lib\netstandard2.0\Azure.ResourceManager.LambdaTestHyperExecute.dll using assemblies from D:\work\sdk2\artifacts\obj\Azure.ResourceManager.LambdaTestHyperExecute\Debug\netstandard2.0\
+  Ran ApiCompat against c:\NUGET_PACKAGES\azure.resourcemanager.lambdatesthyperexecute\1.0.0\lib\netstandard2.0\Azure.ResourceManager.LambdaTestHyperExecute.dll using assemblies from D:\work\sdk2\artifacts\obj\Azure.ResourceManager.LambdaTestHyperExecute\Debug\net8.0\
+  InheritDocTask replaced 53 of 53 inheritdoc tags and removed 34 private member docs in D:\work\sdk2\artifacts\obj\Azure.ResourceManager.LambdaTestHyperExecute\Debug\netstandard2.0\Azure.ResourceManager.LambdaTestHyperExecute.xml
+  Azure.ResourceManager.LambdaTestHyperExecute -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.LambdaTestHyperExecute\Debug\netstandard2.0\Azure.ResourceManager.LambdaTestHyperExecute.dll
+  InheritDocTask replaced 53 of 53 inheritdoc tags and removed 34 private member docs in D:\work\sdk2\artifacts\obj\Azure.ResourceManager.LambdaTestHyperExecute\Debug\net8.0\Azure.ResourceManager.LambdaTestHyperExecute.xml
+  Azure.ResourceManager.LambdaTestHyperExecute -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.LambdaTestHyperExecute\Debug\net8.0\Azure.ResourceManager.LambdaTestHyperExecute.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net462\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net8.0\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net9.0\Azure.Core.TestFramework.dll
+  Azure.ResourceManager.LambdaTestHyperExecute.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.LambdaTestHyperExecute.Tests\Debug\net462\Azure.ResourceManager.LambdaTestHyperExecute.Tests.dll
+  Azure.ResourceManager.LambdaTestHyperExecute.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.LambdaTestHyperExecute.Tests\Debug\net9.0\Azure.ResourceManager.LambdaTestHyperExecute.Tests.dll
+  Azure.ResourceManager.LambdaTestHyperExecute.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.LambdaTestHyperExecute.Tests\Debug\net8.0\Azure.ResourceManager.LambdaTestHyperExecute.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:06.63
