@@ -125,7 +125,7 @@ function Set-TspConfigHttpClient {
         }
         if (-not $pkgName) { $pkgName = Split-Path $SpecPath -Leaf }
         if (-not $yamlObj.options) { $yamlObj.options = @{} }
-        $yamlObj.options.'@azure-typespec/http-client-csharp-mgmt' = @{ 'package-name' = $pkgName; 'namespace' = '{package-name}'; 'new-project' = $false }
+        $yamlObj.options.'@azure-typespec/http-client-csharp-mgmt' = @{ 'package-name' = $pkgName; 'namespace' = '{package-name}'; 'new-project' = $false; 'emitter-output-dir' = '{output-dir}/{service-dir}/{namespace}' }
         $yamlObj | ConvertTo-Yaml | Out-File -FilePath $TspConfigFile -Encoding utf8
         Write-Host "   Updated $TspConfigFile (YAML serialized)" -ForegroundColor Green
         return $true
@@ -180,6 +180,11 @@ function Set-SpecRepoCommit {
     Write-Host "   Cleaning working tree in $SpecRepoPath (git checkout .)" -ForegroundColor Cyan
     $cleanupOut = & git -C $SpecRepoPath checkout . 2>&1
     foreach ($o in $cleanupOut) { Write-Host "     $o" -ForegroundColor DarkGray }
+
+    # Remove untracked files and directories to fully clean the repo
+    Write-Host "   Removing untracked files and directories in $SpecRepoPath (git clean -fd)" -ForegroundColor Cyan
+    $cleanOut = & git -C $SpecRepoPath clean -fd 2>&1
+    foreach ($o in $cleanOut) { Write-Host "     $o" -ForegroundColor DarkGray }
 
     Write-Host "   Found commit/ref '$CommitId' in tsp-location.yaml; attempting checkout in $SpecRepoPath" -ForegroundColor Cyan
     $fetchOut = & git -C $SpecRepoPath fetch --all --tags 2>&1
