@@ -1,0 +1,20 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Ran ApiCompat against c:\NUGET_PACKAGES\azure.resourcemanager.storageactions\1.0.0\lib\netstandard2.0\Azure.ResourceManager.StorageActions.dll using assemblies from D:\work\sdk2\artifacts\obj\Azure.ResourceManager.StorageActions\Debug\net8.0\
+  Ran ApiCompat against c:\NUGET_PACKAGES\azure.resourcemanager.storageactions\1.0.0\lib\netstandard2.0\Azure.ResourceManager.StorageActions.dll using assemblies from D:\work\sdk2\artifacts\obj\Azure.ResourceManager.StorageActions\Debug\netstandard2.0\
+  InheritDocTask replaced 65 of 65 inheritdoc tags and removed 26 private member docs in D:\work\sdk2\artifacts\obj\Azure.ResourceManager.StorageActions\Debug\net8.0\Azure.ResourceManager.StorageActions.xml
+  InheritDocTask replaced 65 of 65 inheritdoc tags and removed 26 private member docs in D:\work\sdk2\artifacts\obj\Azure.ResourceManager.StorageActions\Debug\netstandard2.0\Azure.ResourceManager.StorageActions.xml
+  Azure.ResourceManager.StorageActions -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.StorageActions\Debug\netstandard2.0\Azure.ResourceManager.StorageActions.dll
+  Azure.ResourceManager.StorageActions -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.StorageActions\Debug\net8.0\Azure.ResourceManager.StorageActions.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net462\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net9.0\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net8.0\Azure.Core.TestFramework.dll
+  Azure.ResourceManager.StorageActions.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.StorageActions.Tests\Debug\net462\Azure.ResourceManager.StorageActions.Tests.dll
+  Azure.ResourceManager.StorageActions.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.StorageActions.Tests\Debug\net8.0\Azure.ResourceManager.StorageActions.Tests.dll
+  Azure.ResourceManager.StorageActions.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.StorageActions.Tests\Debug\net9.0\Azure.ResourceManager.StorageActions.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:09.07
