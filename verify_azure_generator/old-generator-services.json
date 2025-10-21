@@ -1,4 +1,5 @@
 {
+  "SourceFile": "D:\\work\\sdk2\\verify_azure_generator\\..\\doc\\GeneratorMigration\\Library_Inventory.md",
   "UniqueServices": [
     "anomalydetector",
     "batch",
@@ -15,8 +16,7 @@
     "purview",
     "translation"
   ],
-  "TotalCount": 20,
-  "SourceFile": "D:\\work\\sdk2\\verify_azure_generator\\..\\doc\\GeneratorMigration\\Library_Inventory.md",
+  "ExtractionDate": "2025-10-21T20:31:02.8483641+08:00",
   "Libraries": [
     {
       "Service": "anomalydetector",
@@ -119,5 +119,5 @@
       "Path": "sdk/translation/Azure.AI.Translation.Text"
     }
   ],
-  "ExtractionDate": "2025-10-21T14:09:22.2524535+08:00"
+  "TotalCount": 20
 }

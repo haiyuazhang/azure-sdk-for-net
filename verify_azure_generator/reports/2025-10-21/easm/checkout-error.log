@@ -1,0 +1,14 @@
+=== Checkout Error Log ===
+Date: 2025-10-21 21:08:32
+Service: easm
+Spec Repository: D:\work\spec
+Target Commit: fe2bf8b0c86b6850113098d04dd1c149a5795699
+Current Commit: 6267b64842af3d744c5b092a3f3beef49729ad6d
+Directory: specification/riskiq/Easm
+Spec Directory: D:\work\spec\specification\riskiq\Easm
+Exit Code: 128
+
+=== Git Checkout Error Output ===
+fatal: unable to read tree (fe2bf8b0c86b6850113098d04dd1c149a5795699)
+21:08:32.790741 trace.c:416             performance: 0.011103800 s: git command: git.exe checkout fe2bf8b0c86b6850113098d04dd1c149a5795699
+

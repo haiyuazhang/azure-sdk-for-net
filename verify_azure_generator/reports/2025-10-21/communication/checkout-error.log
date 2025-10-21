@@ -1,0 +1,14 @@
+=== Checkout Error Log ===
+Date: 2025-10-21 20:55:22
+Service: communication
+Spec Repository: D:\work\spec
+Target Commit: e098f8e5791c54e51fb3dc471b8a6ceda685ef8f
+Current Commit: 5fda13cee42cecc2e7da20bb4fd82bec5be9d0c7
+Directory: specification/programmableconnectivity/Azure.ProgrammableConnectivity
+Spec Directory: D:\work\spec\specification\programmableconnectivity\Azure.ProgrammableConnectivity
+Exit Code: 128
+
+=== Git Checkout Error Output ===
+fatal: unable to read tree (e098f8e5791c54e51fb3dc471b8a6ceda685ef8f)
+20:55:22.231720 trace.c:416             performance: 0.010327300 s: git command: git.exe checkout e098f8e5791c54e51fb3dc471b8a6ceda685ef8f
+

@@ -1,0 +1,38 @@
+=== Code Build Log ===
+Date: 2025-10-21 20:39:22
+Service: batch
+Service Path: D:\work\sdk2\verify_azure_generator\..\sdk\batch\Azure.Compute.Batch
+Command: dotnet build
+Exit Code: 1
+
+=== Build Output ===
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net8.0\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net9.0\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net47\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net462\Azure.Core.TestFramework.dll
+D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Generated\BatchClient.cs(1020,47): error CS0111: Type 'BatchClient' already defines a member called 'PoolExistsAsync' with the same parameter types [D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Azure.Compute.Batch.csproj::TargetFramework=net8.0]
+D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Generated\BatchClient.cs(985,35): error CS0111: Type 'BatchClient' already defines a member called 'PoolExists' with the same parameter types [D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Azure.Compute.Batch.csproj::TargetFramework=net8.0]
+D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Generated\BatchClient.cs(4964,47): error CS0111: Type 'BatchClient' already defines a member called 'JobScheduleExistsAsync' with the same parameter types [D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Azure.Compute.Batch.csproj::TargetFramework=net8.0]
+D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Generated\BatchClient.cs(4929,35): error CS0111: Type 'BatchClient' already defines a member called 'JobScheduleExists' with the same parameter types [D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Azure.Compute.Batch.csproj::TargetFramework=net8.0]
+D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Generated\BatchClient.cs(1020,47): error CS0111: Type 'BatchClient' already defines a member called 'PoolExistsAsync' with the same parameter types [D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Azure.Compute.Batch.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Generated\BatchClient.cs(985,35): error CS0111: Type 'BatchClient' already defines a member called 'PoolExists' with the same parameter types [D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Azure.Compute.Batch.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Generated\BatchClient.cs(4964,47): error CS0111: Type 'BatchClient' already defines a member called 'JobScheduleExistsAsync' with the same parameter types [D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Azure.Compute.Batch.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Generated\BatchClient.cs(4929,35): error CS0111: Type 'BatchClient' already defines a member called 'JobScheduleExists' with the same parameter types [D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Azure.Compute.Batch.csproj::TargetFramework=netstandard2.0]
+
+Build FAILED.
+
+D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Generated\BatchClient.cs(1020,47): error CS0111: Type 'BatchClient' already defines a member called 'PoolExistsAsync' with the same parameter types [D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Azure.Compute.Batch.csproj::TargetFramework=net8.0]
+D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Generated\BatchClient.cs(985,35): error CS0111: Type 'BatchClient' already defines a member called 'PoolExists' with the same parameter types [D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Azure.Compute.Batch.csproj::TargetFramework=net8.0]
+D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Generated\BatchClient.cs(4964,47): error CS0111: Type 'BatchClient' already defines a member called 'JobScheduleExistsAsync' with the same parameter types [D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Azure.Compute.Batch.csproj::TargetFramework=net8.0]
+D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Generated\BatchClient.cs(4929,35): error CS0111: Type 'BatchClient' already defines a member called 'JobScheduleExists' with the same parameter types [D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Azure.Compute.Batch.csproj::TargetFramework=net8.0]
+D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Generated\BatchClient.cs(1020,47): error CS0111: Type 'BatchClient' already defines a member called 'PoolExistsAsync' with the same parameter types [D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Azure.Compute.Batch.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Generated\BatchClient.cs(985,35): error CS0111: Type 'BatchClient' already defines a member called 'PoolExists' with the same parameter types [D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Azure.Compute.Batch.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Generated\BatchClient.cs(4964,47): error CS0111: Type 'BatchClient' already defines a member called 'JobScheduleExistsAsync' with the same parameter types [D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Azure.Compute.Batch.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Generated\BatchClient.cs(4929,35): error CS0111: Type 'BatchClient' already defines a member called 'JobScheduleExists' with the same parameter types [D:\work\sdk2\sdk\batch\Azure.Compute.Batch\src\Azure.Compute.Batch.csproj::TargetFramework=netstandard2.0]
+    0 Warning(s)
+    8 Error(s)
+
+Time Elapsed 00:00:06.15
+

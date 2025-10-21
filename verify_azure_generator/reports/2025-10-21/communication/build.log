@@ -1,0 +1,10 @@
+=== Code Build Log ===
+Date: 2025-10-21 20:55:16
+Service: communication
+Service Path: D:\work\sdk2\verify_azure_generator\..\sdk\communication\Azure.Communication.Messages
+Command: dotnet build
+Exit Code: 1
+
+=== Build Output ===
+MSBUILD : error MSB1003: Specify a project or solution file. The current working directory does not contain a project or solution file.
+

@@ -33,8 +33,11 @@
 .PARAMETER ServicesJsonFile
     Path to the old-generator-services.json file. Defaults to "old-generator-services.json" in current directory.
 
-.PARAMETER RepoRoot
-    Root path of the repository. Defaults to "D:\work\sdk2".
+.PARAMETER SDKRepoRoot
+    Root path of the SDK repository. Defaults to the parent directory of the script location.
+
+.PARAMETER SpecRepoRoot
+    Root path of the Azure REST API specs repository. Defaults to "D:\work\spec".
 
 .PARAMETER LogLevel
     Logging level: 'Verbose', 'Info', 'Warning', 'Error'. Defaults to 'Info'.
@@ -59,7 +62,7 @@
     Only processes existing services with filter and skipped steps
 
 .EXAMPLE
-    .\Process-OldGeneratorServices.ps1 -ServicesJsonFile "custom-services.json" -RepoRoot "C:\MyRepo"
+    .\Process-OldGeneratorServices.ps1 -ServicesJsonFile "custom-services.json" -SDKRepoRoot "C:\MyRepo"
     Uses custom file paths
 #>
 
@@ -75,7 +78,10 @@ param(
     [string]$ServicesJsonFile = "old-generator-services.json",
     
     [Parameter()]
-    [string]$RepoRoot = "D:\work\sdk2",
+    [string]$SDKRepoRoot = "$PSScriptRoot\..",
+    
+    [Parameter()]
+    [string]$SpecRepoRoot = "D:\work\spec",
     
     [Parameter()]
     [ValidateSet('Verbose', 'Info', 'Warning', 'Error')]
@@ -91,7 +97,6 @@ param(
 # Global variables
 $script:ProcessedServices = @()
 $script:FailedServices = @()
-$script:LogFile = Join-Path $PSScriptRoot "process-old-generator-services-$(Get-Date -Format 'yyyyMMdd-HHmmss').log"
 
 #region Logging Functions
 function Write-Log {
@@ -110,9 +115,6 @@ function Write-Log {
     }
     
     $logMessage += " $Message"
-    
-    # Write to log file
-    Add-Content -Path $LogFile -Value $logMessage
     
     # Write to console based on log level
     $shouldDisplay = switch ($LogLevel) {
@@ -276,7 +278,7 @@ function Step1-FindAndConvertPath {
     }
     
     $relativePath = $ServiceInfo.Path
-    $absolutePath = Join-Path -Path $RepoRoot -ChildPath $relativePath
+    $absolutePath = Join-Path -Path $SDKRepoRoot -ChildPath $relativePath
     
     Write-Log "Relative path: $relativePath" -Level Verbose -Service $ServiceInfo.Service
     Write-Log "Absolute path: $absolutePath" -Level Verbose -Service $ServiceInfo.Service
@@ -362,27 +364,39 @@ function Step3-UpdateTspLocation {
 function Step4-UpdateCsProject {
     param(
         [string]$ServicePath,
-        [string]$ServiceName
+        [string]$ServiceName,
+        [string]$LibraryName
     )
     
     if (-not (Write-Step -StepNumber 4 -StepName "Update .csproj file" -Service $ServiceName)) {
         return $true
     }
     
-    # Find .csproj file in the service directory and subdirectories
-    $csprojFiles = Get-ChildItem -Path $ServicePath -Filter "*.csproj" -File -Recurse
+    # Look for the specific library's .csproj file first
+    $targetCsprojFile = "$LibraryName.csproj"
+    $csprojFiles = Get-ChildItem -Path $ServicePath -Filter $targetCsprojFile -File -Recurse
     
     if ($csprojFiles.Count -eq 0) {
-        Write-Log "WARNING: No .csproj file found in: $ServicePath" -Level Warning -Service $ServiceName
-        return $false
-    }
-    
-    if ($csprojFiles.Count -gt 1) {
-        Write-Log "WARNING: Multiple .csproj files found, using first one: $($csprojFiles[0].Name)" -Level Warning -Service $ServiceName
+        Write-Log "WARNING: Specific .csproj file not found: $targetCsprojFile in $ServicePath" -Level Warning -Service $ServiceName
+        Write-Log "Looking for any .csproj files as fallback..." -Level Info -Service $ServiceName
+        
+        # Fallback: Find any .csproj file in the service directory and subdirectories
+        $csprojFiles = Get-ChildItem -Path $ServicePath -Filter "*.csproj" -File -Recurse
+        
+        if ($csprojFiles.Count -eq 0) {
+            Write-Log "WARNING: No .csproj file found in: $ServicePath" -Level Warning -Service $ServiceName
+            return $false
+        }
+        
+        if ($csprojFiles.Count -gt 1) {
+            Write-Log "WARNING: Multiple .csproj files found, using first one: $($csprojFiles[0].Name)" -Level Warning -Service $ServiceName
+        }
+    } else {
+        Write-Log "Found target .csproj file: $targetCsprojFile" -Level Info -Service $ServiceName
     }
     
     $csprojFile = $csprojFiles[0].FullName
-    Write-Log "Found .csproj file: $csprojFile" -Level Verbose -Service $ServiceName
+    Write-Log "Using .csproj file: $csprojFile" -Level Verbose -Service $ServiceName
     
     try {
         # Read current content
@@ -432,8 +446,8 @@ function Step5-CheckoutSpec {
         return $true
     }
     
-    # Hard-coded spec repo root path
-    $specRepoRoot = "D:\work\spec"
+    # Use the spec repo root parameter
+    $specRepoRoot = $SpecRepoRoot
     
     # Find tsp-location.yaml file
     $tspLocationFile = Join-Path $ServicePath "tsp-location.yaml"
@@ -526,7 +540,32 @@ function Step5-CheckoutSpec {
                 Write-Log "Attempting to checkout commit: $commit" -Level Info -Service $ServiceName
                 $gitCheckoutResult = & git checkout $commit 2>&1
                 if ($LASTEXITCODE -ne 0) {
+                    # Create checkout error log in reports directory
+                    $today = Get-Date -Format "yyyy-MM-dd"
+                    $reportDir = Join-Path $PSScriptRoot "reports\$today\$ServiceName"
+                    if (-not (Test-Path $reportDir)) {
+                        New-Item -ItemType Directory -Path $reportDir -Force | Out-Null
+                    }
+                    $checkoutErrorLogPath = Join-Path $reportDir "checkout-error.log"
+                    
+                    $checkoutErrorContent = @"
+=== Checkout Error Log ===
+Date: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
+Service: $ServiceName
+Spec Repository: $specRepoRoot
+Target Commit: $commit
+Current Commit: $currentCommit
+Directory: $directory
+Spec Directory: $specDirectory
+Exit Code: $LASTEXITCODE
+
+=== Git Checkout Error Output ===
+$($gitCheckoutResult | Out-String)
+"@
+                    $checkoutErrorContent | Set-Content -Path $checkoutErrorLogPath -Encoding UTF8
+                    
                     Write-Log "ERROR: Failed to checkout commit $commit - $gitCheckoutResult" -Level Error -Service $ServiceName
+                    Write-Log "Checkout error log saved to: $checkoutErrorLogPath" -Level Error -Service $ServiceName
                     return $false
                 }
                 
@@ -564,8 +603,8 @@ function Step6-UpdateTspConfig {
         return $true
     }
     
-    # Hard-coded spec repo root path
-    $specRepoRoot = "D:\work\spec"
+    # Use the spec repo root parameter
+    $specRepoRoot = $SpecRepoRoot
     
     # Find tsp-location.yaml to get the spec directory
     $tspLocationFile = Join-Path $ServicePath "tsp-location.yaml"
@@ -826,6 +865,283 @@ function Step9-GenerateReport {
     }
 }
 
+function Generate-FinalSummaryReport {
+    param(
+        [string]$ReportsBaseDir
+    )
+    
+    try {
+        $today = Get-Date -Format "yyyy-MM-dd"
+        $todayReportsDir = Join-Path $ReportsBaseDir $today
+        
+        if (-not (Test-Path $todayReportsDir)) {
+            Write-Log "No reports directory found for today: $todayReportsDir" -Level Warning
+            return $false
+        }
+        
+        Write-Log "Generating final summary report from: $todayReportsDir" -Level Info
+        
+        # Get all service directories
+        $serviceDirectories = Get-ChildItem -Path $todayReportsDir -Directory
+        
+        # Initialize summary data
+        $summaryData = @{
+            GenerationDate = Get-Date
+            TotalServices = $serviceDirectories.Count
+            SuccessfulServices = @()
+            CheckoutFailedServices = @()
+            BuildFailedServices = @()
+            GenerationFailedServices = @()
+            CompletelyFailedServices = @()
+        }
+        
+        # Analyze each service directory
+        foreach ($serviceDir in $serviceDirectories) {
+            $serviceName = $serviceDir.Name
+            $serviceInfo = @{
+                ServiceName = $serviceName
+                ReportPath = $serviceDir.FullName
+                HasCheckoutError = $false
+                HasBuildError = $false
+                HasGenerationError = $false
+                LogFiles = @()
+            }
+            
+            # Check for various log files
+            $logFiles = Get-ChildItem -Path $serviceDir.FullName -Filter "*.log" -File
+            foreach ($logFile in $logFiles) {
+                $serviceInfo.LogFiles += $logFile.Name
+                
+                switch ($logFile.Name) {
+                    "checkout-error.log" { 
+                        $serviceInfo.HasCheckoutError = $true 
+                        Write-Log "Found checkout error for service: $serviceName" -Level Verbose
+                    }
+                    "build.log" { 
+                        # Check if build failed by examining log content
+                        $buildContent = Get-Content $logFile.FullName -Raw
+                        if ($buildContent -match "Exit Code: [1-9]" -or $buildContent -match "Build FAILED") {
+                            $serviceInfo.HasBuildError = $true
+                            Write-Log "Found build error for service: $serviceName" -Level Verbose
+                        }
+                    }
+                    "generate-code.log" { 
+                        # Check if code generation failed
+                        $genContent = Get-Content $logFile.FullName -Raw
+                        if ($genContent -match "Exit Code: [1-9]" -or $genContent -match "generation failed") {
+                            $serviceInfo.HasGenerationError = $true
+                            Write-Log "Found generation error for service: $serviceName" -Level Verbose
+                        }
+                    }
+                }
+            }
+            
+            # Categorize the service based on what failed
+            if ($serviceInfo.HasCheckoutError) {
+                $summaryData.CheckoutFailedServices += $serviceInfo
+            }
+            elseif ($serviceInfo.HasGenerationError) {
+                $summaryData.GenerationFailedServices += $serviceInfo
+            }
+            elseif ($serviceInfo.HasBuildError) {
+                $summaryData.BuildFailedServices += $serviceInfo
+            }
+            elseif ($serviceInfo.LogFiles.Count -gt 0) {
+                $summaryData.SuccessfulServices += $serviceInfo
+            }
+            else {
+                $summaryData.CompletelyFailedServices += $serviceInfo
+            }
+        }
+        
+        # Generate summary report content
+        $reportContent = Generate-SummaryReportContent -SummaryData $summaryData
+        
+        # Save the summary report
+        $summaryReportPath = Join-Path $todayReportsDir "SUMMARY-REPORT.md"
+        $reportContent | Set-Content -Path $summaryReportPath -Encoding UTF8
+        
+        Write-Log "Final summary report generated: $summaryReportPath" -Level Info
+        Write-Log "Report summary - Total: $($summaryData.TotalServices), Successful: $($summaryData.SuccessfulServices.Count), Checkout Failed: $($summaryData.CheckoutFailedServices.Count), Generation Failed: $($summaryData.GenerationFailedServices.Count), Build Failed: $($summaryData.BuildFailedServices.Count), Completely Failed: $($summaryData.CompletelyFailedServices.Count)" -Level Info
+        
+        return $true
+    }
+    catch {
+        Write-Log "ERROR: Failed to generate final summary report - $($_.Exception.Message)" -Level Error
+        return $false
+    }
+}
+
+function Generate-SummaryReportContent {
+    param(
+        [hashtable]$SummaryData
+    )
+    
+    $content = @"
+# TypeSpec Old Generator Services Migration Summary Report
+
+**Generated:** $($SummaryData.GenerationDate.ToString("yyyy-MM-dd HH:mm:ss"))
+
+## 📊 Overall Statistics
+
+- **Total Services Processed:** $($SummaryData.TotalServices)
+- **✅ Successful Services:** $($SummaryData.SuccessfulServices.Count)
+- **⚠️ Checkout Failed:** $($SummaryData.CheckoutFailedServices.Count)
+- **🔧 Generation Failed:** $($SummaryData.GenerationFailedServices.Count)
+- **🏗️ Build Failed:** $($SummaryData.BuildFailedServices.Count)
+- **❌ Completely Failed:** $($SummaryData.CompletelyFailedServices.Count)
+
+## 📈 Success Rate
+
+- **Overall Success Rate:** $([math]::Round(($SummaryData.SuccessfulServices.Count / $SummaryData.TotalServices) * 100, 1))%
+- **Partial Success Rate (including checkout failures):** $([math]::Round((($SummaryData.SuccessfulServices.Count + $SummaryData.CheckoutFailedServices.Count) / $SummaryData.TotalServices) * 100, 1))%
+
+---
+
+"@
+
+    # Add successful services section
+    if ($SummaryData.SuccessfulServices.Count -gt 0) {
+        $content += @"
+
+## ✅ Successful Services ($($SummaryData.SuccessfulServices.Count))
+
+These services completed all migration steps successfully:
+
+"@
+        foreach ($service in $SummaryData.SuccessfulServices) {
+            $logFilesList = $service.LogFiles -join ", "
+            $content += "- **$($service.ServiceName)** - Log files: $logFilesList`n"
+        }
+    }
+
+    # Add checkout failed services section
+    if ($SummaryData.CheckoutFailedServices.Count -gt 0) {
+        $content += @"
+
+## ⚠️ Services with Checkout Failures ($($SummaryData.CheckoutFailedServices.Count))
+
+These services completed steps 1-4 but failed at spec checkout:
+
+"@
+        foreach ($service in $SummaryData.CheckoutFailedServices) {
+            $content += @"
+- **$($service.ServiceName)** 
+  - Issue: Git checkout failed for spec commit
+  - Log: ``checkout-error.log``
+  - Impact: Steps 6-8 skipped (tspconfig update, code generation, build)
+
+"@
+        }
+    }
+
+    # Add generation failed services section  
+    if ($SummaryData.GenerationFailedServices.Count -gt 0) {
+        $content += @"
+
+## 🔧 Services with Code Generation Failures ($($SummaryData.GenerationFailedServices.Count))
+
+These services failed during TypeSpec code generation:
+
+"@
+        foreach ($service in $SummaryData.GenerationFailedServices) {
+            $logFilesList = $service.LogFiles -join ", "
+            $content += @"
+- **$($service.ServiceName)**
+  - Issue: TypeSpec code generation failed
+  - Log files: $logFilesList
+  - Check: ``generate-code.log`` for details
+
+"@
+        }
+    }
+
+    # Add build failed services section
+    if ($SummaryData.BuildFailedServices.Count -gt 0) {
+        $content += @"
+
+## 🏗️ Services with Build Failures ($($SummaryData.BuildFailedServices.Count))
+
+These services generated code but failed to build:
+
+"@
+        foreach ($service in $SummaryData.BuildFailedServices) {
+            $logFilesList = $service.LogFiles -join ", "
+            $content += @"
+- **$($service.ServiceName)**
+  - Issue: .NET build compilation failed
+  - Log files: $logFilesList
+  - Check: ``build.log`` for compilation errors
+
+"@
+        }
+    }
+
+    # Add completely failed services section
+    if ($SummaryData.CompletelyFailedServices.Count -gt 0) {
+        $content += @"
+
+## ❌ Completely Failed Services ($($SummaryData.CompletelyFailedServices.Count))
+
+These services failed early in processing with no logs generated:
+
+"@
+        foreach ($service in $SummaryData.CompletelyFailedServices) {
+            $content += "- **$($service.ServiceName)** - No log files found, check console output for errors`n"
+        }
+    }
+
+    # Add recommendations section
+    $content += @"
+
+---
+
+## 🔍 Next Steps & Recommendations
+
+### For Checkout Failures:
+1. Verify the target commits exist in the spec repository
+2. Check if spec repository is up to date
+3. Review ``checkout-error.log`` files for specific git errors
+
+### For Generation Failures:
+1. Review ``generate-code.log`` for TypeSpec compilation errors
+2. Check if tspconfig.yaml was correctly updated
+3. Verify emitter package configuration
+
+### For Build Failures:
+1. Review ``build.log`` for .NET compilation errors
+2. Check for missing dependencies or API changes
+3. Verify generated code compatibility
+
+### For Investigation:
+- All detailed logs are available in individual service directories
+- Use ``reports\$(Get-Date -Format "yyyy-MM-dd")\{service-name}\*.log`` for troubleshooting
+
+## 📁 Report Structure
+
+```
+reports/
+└── $(Get-Date -Format "yyyy-MM-dd")/
+    ├── SUMMARY-REPORT.md (this file)
+"@
+
+    foreach ($service in ($SummaryData.SuccessfulServices + $SummaryData.CheckoutFailedServices + $SummaryData.GenerationFailedServices + $SummaryData.BuildFailedServices + $SummaryData.CompletelyFailedServices)) {
+        $content += "    ├── $($service.ServiceName)/`n"
+        foreach ($logFile in $service.LogFiles) {
+            $content += "    │   └── $logFile`n"
+        }
+    }
+
+    $content += @"
+```
+
+**Report generated by:** TypeSpec Old Generator Services Migration Pipeline  
+**Timestamp:** $($SummaryData.GenerationDate.ToString("yyyy-MM-dd HH:mm:ss"))
+"@
+
+    return $content
+}
+
 function Process-Service {
     param(
         [PSCustomObject]$ServiceInfo
@@ -857,51 +1173,72 @@ function Process-Service {
         }
         
         # Step 4: Update .csproj file
-        if (-not (Step4-UpdateCsProject -ServicePath $absolutePath -ServiceName $serviceName)) {
+        if (-not (Step4-UpdateCsProject -ServicePath $absolutePath -ServiceName $serviceName -LibraryName $library)) {
             Write-Log "Failed to update .csproj file, continuing..." -Level Warning -Service $serviceName
         }
         
         # Step 5: Checkout spec
-        if (-not (Step5-CheckoutSpec -ServicePath $absolutePath -ServiceName $serviceName)) {
-            Write-Log "Failed to checkout spec, continuing..." -Level Warning -Service $serviceName
+        $checkoutSucceeded = Step5-CheckoutSpec -ServicePath $absolutePath -ServiceName $serviceName
+        if (-not $checkoutSucceeded) {
+            Write-Log "Failed to checkout spec commit, skipping code generation and build steps" -Level Error -Service $serviceName
         }
         
-        # Step 6: Update tspconfig.yaml
-        if (-not (Step6-UpdateTspConfig -ServicePath $absolutePath -ServiceName $serviceName)) {
-            Write-Log "Failed to update tspconfig.yaml, continuing..." -Level Warning -Service $serviceName
+        # Step 6: Update tspconfig.yaml (only if checkout succeeded)
+        if ($checkoutSucceeded) {
+            if (-not (Step6-UpdateTspConfig -ServicePath $absolutePath -ServiceName $serviceName)) {
+                Write-Log "Failed to update tspconfig.yaml, continuing..." -Level Warning -Service $serviceName
+            }
+        } else {
+            Write-Log "SKIPPING Step 6: Update tspconfig.yaml (checkout failed)" -Level Warning -Service $serviceName
         }
         
-        # Step 7: Generate code
-        if (-not (Step7-GenerateCode -ServicePath $absolutePath -ServiceName $serviceName -SpecRepo "D:\work\spec")) {
-            Write-Log "Failed to generate code, continuing..." -Level Warning -Service $serviceName
+        # Step 7: Generate code (only if checkout succeeded)
+        if ($checkoutSucceeded) {
+            if (-not (Step7-GenerateCode -ServicePath $absolutePath -ServiceName $serviceName -SpecRepo $SpecRepoRoot)) {
+                Write-Log "Failed to generate code, continuing..." -Level Warning -Service $serviceName
+            }
+        } else {
+            Write-Log "SKIPPING Step 7: Generate code (checkout failed)" -Level Warning -Service $serviceName
         }
         
-        # Step 8: Build code
-        if (-not (Step8-BuildCode -ServicePath $absolutePath -ServiceName $serviceName)) {
-            Write-Log "Failed to build code, continuing..." -Level Warning -Service $serviceName
+        # Step 8: Build code (only if checkout succeeded)
+        if ($checkoutSucceeded) {
+            if (-not (Step8-BuildCode -ServicePath $absolutePath -ServiceName $serviceName)) {
+                Write-Log "Failed to build code, continuing..." -Level Warning -Service $serviceName
+            }
+        } else {
+            Write-Log "SKIPPING Step 8: Build code (checkout failed)" -Level Warning -Service $serviceName
         }
         
-        # Step 9: Generate report
-        Step9-GenerateReport -ServicePath $absolutePath -ServiceName $serviceName -Success $true
+        # Step 9: Generate report (always run, regardless of checkout status)
+        $serviceSuccess = $checkoutSucceeded
+        Step9-GenerateReport -ServicePath $absolutePath -ServiceName $serviceName -Success $serviceSuccess
         
+        $serviceStatus = if ($checkoutSucceeded) { "Success" } else { "Checkout Failed" }
         $script:ProcessedServices += [PSCustomObject]@{
             Service = $serviceName
             Library = $library
             Path = $absolutePath
-            Status = "Success"
+            Status = $serviceStatus
             Timestamp = Get-Date
         }
         
-        Write-Log "Successfully processed service: $serviceName" -Level Info -Service $serviceName
+        if ($checkoutSucceeded) {
+            Write-Log "Successfully processed service: $serviceName" -Level Info -Service $serviceName
+        } else {
+            Write-Log "Partially processed service: $serviceName (checkout failed, skipped code generation/build)" -Level Warning -Service $serviceName
+        }
     }
     catch {
         $errorMessage = $_.Exception.Message
+        
         Write-Log "Failed to process service: $serviceName - $errorMessage" -Level Error -Service $serviceName
         
         $script:FailedServices += [PSCustomObject]@{
             Service = $serviceName
             Library = $library
             Error = $errorMessage
+            ErrorReason = "Processing Error"
             Timestamp = Get-Date
         }
         
@@ -925,10 +1262,10 @@ function Process-Service {
 function Main {
     Write-Log "Starting Old Generator Services Migration Pipeline" -Level Info
     Write-Log "Mode: $Mode" -Level Info
-    Write-Log "Repository Root: $RepoRoot" -Level Info
+    Write-Log "SDK Repository Root: $SDKRepoRoot" -Level Info
+    Write-Log "Spec Repository Root: $SpecRepoRoot" -Level Info
     Write-Log "Services JSON File: $ServicesJsonFile" -Level Info
     Write-Log "Log Level: $LogLevel" -Level Info
-    Write-Log "Log File: $script:LogFile" -Level Info
     
     if ($SkipSteps.Count -gt 0) {
         Write-Log "Skipping steps: $($SkipSteps -join ', ')" -Level Info
@@ -961,9 +1298,9 @@ function Main {
             return 1
         }
         
-        # Check if repository root exists
-        if (-not (Test-Path $RepoRoot)) {
-            Write-Log "ERROR: Repository root not found: $RepoRoot" -Level Error
+        # Check if SDK repository root exists
+        if (-not (Test-Path $SDKRepoRoot)) {
+            Write-Log "ERROR: SDK repository root not found: $SDKRepoRoot" -Level Error
             return 1
         }
         
@@ -1007,31 +1344,41 @@ function Main {
             Write-Log "Processed services: $($script:ProcessedServices.Count)" -Level Info
             Write-Log "Failed services: $($script:FailedServices.Count)" -Level Info
             
+            # Summary of processed services by status
+            $successfulServices = $script:ProcessedServices | Where-Object { $_.Status -eq "Success" }
+            $checkoutFailedServices = $script:ProcessedServices | Where-Object { $_.Status -eq "Checkout Failed" }
+            
+            if ($successfulServices.Count -gt 0) {
+                Write-Log "Fully successful services ($($successfulServices.Count)):" -Level Info
+                foreach ($success in $successfulServices) {
+                    Write-Log "  ✅ $($success.Service) ($($success.Library))" -Level Info
+                }
+            }
+            
+            if ($checkoutFailedServices.Count -gt 0) {
+                Write-Log "Services with checkout failures ($($checkoutFailedServices.Count)):" -Level Warning
+                foreach ($checkoutFailed in $checkoutFailedServices) {
+                    Write-Log "  ⚠️  $($checkoutFailed.Service) ($($checkoutFailed.Library)): Checkout failed - see checkout-error.log" -Level Warning
+                }
+            }
+            
             if ($script:FailedServices.Count -gt 0) {
-                Write-Log "Failed services:" -Level Warning
+                Write-Log "Completely failed services ($($script:FailedServices.Count)):" -Level Warning
                 foreach ($failed in $script:FailedServices) {
-                    Write-Log "  - $($failed.Service) ($($failed.Library)): $($failed.Error)" -Level Warning
+                    Write-Log "  ❌ $($failed.Service) ($($failed.Library)): $($failed.Error)" -Level Warning
                 }
             }
             
-            # Export results
-            $results = @{
-                Summary = @{
-                    TotalProcessed = $script:ProcessedServices.Count
-                    TotalFailed = $script:FailedServices.Count
-                    ProcessingDate = Get-Date
-                    LogFile = $LogFile
-                    Mode = $Mode
-                    ServiceFilter = $ServiceFilter
-                    SkippedSteps = $SkipSteps
-                }
-                ProcessedServices = $script:ProcessedServices
-                FailedServices = $script:FailedServices
+            # Generate final summary report
+            Write-Log "Generating final summary report..." -Level Info
+            $reportsDir = Join-Path $PSScriptRoot "reports"
+            if (Generate-FinalSummaryReport -ReportsBaseDir $reportsDir) {
+                Write-Log "Final summary report generation completed successfully" -Level Info
+            } else {
+                Write-Log "Final summary report generation failed" -Level Warning
             }
             
-            $resultsFile = "processing-results-$(Get-Date -Format 'yyyyMMdd-HHmmss').json"
-            $results | ConvertTo-Json -Depth 3 | Set-Content -Path $resultsFile
-            Write-Log "Results saved to: $resultsFile" -Level Info
+            Write-Log "Processing summary completed" -Level Info
             
         }
         catch {

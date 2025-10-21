@@ -1,0 +1,88 @@
+=== Code Generation Build Log ===
+Date: 2025-10-21 21:08:21
+Service: documentintelligence
+Service Path: D:\work\sdk2\verify_azure_generator\..\sdk\documentintelligence\Azure.AI.DocumentIntelligence
+Spec Directory: D:\work\spec\specification\ai\DocumentIntelligence
+Command: dotnet build /t:GenerateCode --tl:off /p:LocalSpecRepo="D:\work\spec\specification\ai\DocumentIntelligence"
+Exit Code: 0
+
+=== Build Output ===
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  npm warn EBADENGINE Unsupported engine {
+  npm warn EBADENGINE   package: 'yargs@18.0.0',
+  npm warn EBADENGINE   required: { node: '^20.19.0 || ^22.12.0 || >=23' },
+  npm warn EBADENGINE   current: { node: 'v20.18.3', npm: '10.8.2' }
+  npm warn EBADENGINE }
+  npm warn EBADENGINE Unsupported engine {
+  npm warn EBADENGINE   package: 'yargs-parser@22.0.0',
+  npm warn EBADENGINE   required: { node: '^20.19.0 || ^22.12.0 || >=23' },
+  npm warn EBADENGINE   current: { node: 'v20.18.3', npm: '10.8.2' }
+  npm warn EBADENGINE }
+  AutoRest code generation utility [cli version: 3.7.1; node: v20.18.3]
+  (C) 2018 Microsoft Corporation.
+  https://aka.ms/autorest
+  info    | AutoRest core version selected from configuration: 3.9.7.
+  info    |    Loading AutoRest core      'C:\Users\haiyzhan.FAREAST\.autorest\@autorestcore@3.9.7\nodemodules\@autorest\core\dist' (3.9.7)
+  info    |    Loading local AutoRest extension '@autorest/csharp' (c:/NUGET_PACKAGES/microsoft.azure.autorest.csharp/3.0.0-beta.20231107.1/buildMultiTargeting/../tools/net6.0/any/)
+  info    |    Loading AutoRest extension '@autorest/modelerfour' (4.26.0->4.26.0)
+  warning | PreCheck/SchemaMissingType | The schema 'SanitizersToRemove' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
+      - file:///D:/work/sdk2/sdk/core/Azure.Core.TestFramework/src/testproxy.json:862:5
+  warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+  info    | Autorest completed in 7.03s. 33 files generated.
+  
+  added 172 packages, and audited 173 packages in 1m
+  
+  30 packages are looking for funding
+    run `npm fund` for details
+  
+  found 0 vulnerabilities
+  Using output directory 'D:/work/sdk2/sdk/documentintelligence/Azure.AI.DocumentIntelligence/'
+  
+  888                                      888 d8b                   888    
+  888                                      888 Y8P                   888    
+  888                                      888                       888    
+  888888 .d8888b  88888b.          .d8888b 888 888  .d88b.  88888b.  888888 
+  888    88K      888 "88b        d88P"    888 888 d8P  Y8b 888 "88b 888    
+  888    "Y8888b. 888  888 888888 888      888 888 88888888 888  888 888    
+  Y88b.       X88 888 d88P        Y88b.    888 888 Y8b.     888  888 Y88b.  
+   "Y888  88888P' 88888P"          "Y8888P 888 888  "Y8888  888  888  "Y888 
+                  888                                                       
+                  888                                                       
+                  888                                                       
+  
+  0.29.0
+  NOTE: A path to a local spec was provided, will generate based off of local files...
+  Local spec repo root is D:/work/spec
+  Found emitter package @azure-typespec/http-client-csharp@1.0.0-alpha.20251017.2
+  Installing dependencies from npm...
+  npm warn EBADENGINE Unsupported engine {
+  npm warn EBADENGINE   package: 'yargs@18.0.0',
+  npm warn EBADENGINE   required: { node: '^20.19.0 || ^22.12.0 || >=23' },
+  npm warn EBADENGINE   current: { node: 'v20.18.3', npm: '10.8.2' }
+  npm warn EBADENGINE }
+  npm warn EBADENGINE Unsupported engine {
+  npm warn EBADENGINE   package: 'yargs-parser@22.0.0',
+  npm warn EBADENGINE   required: { node: '^20.19.0 || ^22.12.0 || >=23' },
+  npm warn EBADENGINE   current: { node: 'v20.18.3', npm: '10.8.2' }
+  npm warn EBADENGINE }
+  
+  added 119 packages, and audited 120 packages in 14s
+  
+  23 packages are looking for funding
+    run `npm fund` for details
+  
+  found 0 vulnerabilities
+  'grep' is not recognized as an internal or external command,
+  operable program or batch file.
+  Resolved path: D:/work/sdk2/sdk/documentintelligence/Azure.AI.DocumentIntelligence/TempTypeSpecFiles/node_modules/@typespec/compiler
+  Compiling tsp using @azure-typespec/http-client-csharp...
+  Diagnostics were reported during compilation. Use the `--debug` flag to see if there is warning diagnostic output.
+  generation complete
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:02:33.06
+

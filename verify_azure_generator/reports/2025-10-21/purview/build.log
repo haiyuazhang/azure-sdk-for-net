@@ -1,0 +1,22 @@
+=== Code Build Log ===
+Date: 2025-10-21 21:23:27
+Service: purview
+Service Path: D:\work\sdk2\verify_azure_generator\..\sdk\purview\Azure.Analytics.Purview.DataMap
+Command: dotnet build
+Exit Code: 1
+
+=== Build Output ===
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+D:\work\sdk2\sdk\purview\Azure.Analytics.Purview.DataMap\src\Generated\Internal\MultiPartFormDataBinaryContent.cs(22,26): error CS0104: 'MultipartFormDataContent' is an ambiguous reference between 'Azure.Core.MultipartFormDataContent' and 'System.Net.Http.MultipartFormDataContent' [D:\work\sdk2\sdk\purview\Azure.Analytics.Purview.DataMap\src\Azure.Analytics.Purview.DataMap.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\purview\Azure.Analytics.Purview.DataMap\src\Generated\Internal\MultiPartFormDataBinaryContent.cs(22,26): error CS0104: 'MultipartFormDataContent' is an ambiguous reference between 'Azure.Core.MultipartFormDataContent' and 'System.Net.Http.MultipartFormDataContent' [D:\work\sdk2\sdk\purview\Azure.Analytics.Purview.DataMap\src\Azure.Analytics.Purview.DataMap.csproj::TargetFramework=net8.0]
+
+Build FAILED.
+
+D:\work\sdk2\sdk\purview\Azure.Analytics.Purview.DataMap\src\Generated\Internal\MultiPartFormDataBinaryContent.cs(22,26): error CS0104: 'MultipartFormDataContent' is an ambiguous reference between 'Azure.Core.MultipartFormDataContent' and 'System.Net.Http.MultipartFormDataContent' [D:\work\sdk2\sdk\purview\Azure.Analytics.Purview.DataMap\src\Azure.Analytics.Purview.DataMap.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\purview\Azure.Analytics.Purview.DataMap\src\Generated\Internal\MultiPartFormDataBinaryContent.cs(22,26): error CS0104: 'MultipartFormDataContent' is an ambiguous reference between 'Azure.Core.MultipartFormDataContent' and 'System.Net.Http.MultipartFormDataContent' [D:\work\sdk2\sdk\purview\Azure.Analytics.Purview.DataMap\src\Azure.Analytics.Purview.DataMap.csproj::TargetFramework=net8.0]
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:03.23
+

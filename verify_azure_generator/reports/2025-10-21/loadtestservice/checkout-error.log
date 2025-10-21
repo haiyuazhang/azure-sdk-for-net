@@ -1,0 +1,14 @@
+=== Checkout Error Log ===
+Date: 2025-10-21 21:14:33
+Service: loadtestservice
+Spec Repository: D:\work\spec
+Target Commit: f554f482e7a24b1ec057897865e106648e7b2ce7
+Current Commit: 4436f0b7bb0ed03342eb26eab3db396acf69850e
+Directory: specification/loadtestservice/data-plane/loadtesting
+Spec Directory: D:\work\spec\specification\loadtestservice\data-plane\loadtesting
+Exit Code: 128
+
+=== Git Checkout Error Output ===
+fatal: unable to read tree (f554f482e7a24b1ec057897865e106648e7b2ce7)
+21:14:33.967694 trace.c:416             performance: 0.010832000 s: git command: git.exe checkout f554f482e7a24b1ec057897865e106648e7b2ce7
+
