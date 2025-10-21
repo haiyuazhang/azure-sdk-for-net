@@ -1,0 +1,19 @@
+{
+  "ProcessedServices": [
+    {
+      "Service": "contentsafety",
+      "Library": "Azure.AI.ContentSafety",
+      "Path": "D:\\work\\sdk2\\sdk\\contentsafety\\Azure.AI.ContentSafety",
+      "Status": "Success",
+      "Timestamp": "2025-10-21T01:03:22.5777324+08:00"
+    }
+  ],
+  "FailedServices": [],
+  "Summary": {
+    "DryRun": null,
+    "LogFile": "process-old-generator-services-20251021-010103.log",
+    "ProcessingDate": "2025-10-21T01:03:22.6738878+08:00",
+    "TotalFailed": 0,
+    "TotalProcessed": 1
+  }
+}

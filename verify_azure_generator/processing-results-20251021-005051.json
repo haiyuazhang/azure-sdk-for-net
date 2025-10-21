@@ -1,0 +1,19 @@
+{
+  "ProcessedServices": [
+    {
+      "Service": "anomalydetector",
+      "Library": "Azure.AI.AnomalyDetector",
+      "Path": "D:\\work\\sdk2\\sdk\\anomalydetector\\Azure.AI.AnomalyDetector",
+      "Status": "Success",
+      "Timestamp": "2025-10-21T00:50:51.6309746+08:00"
+    }
+  ],
+  "FailedServices": [],
+  "Summary": {
+    "DryRun": null,
+    "LogFile": "process-old-generator-services-20251021-005050.log",
+    "ProcessingDate": "2025-10-21T00:50:51.6724971+08:00",
+    "TotalFailed": 0,
+    "TotalProcessed": 1
+  }
+}

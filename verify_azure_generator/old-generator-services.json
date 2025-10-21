@@ -1,0 +1,121 @@
+{
+  "Libraries": [
+    {
+      "Service": "anomalydetector",
+      "Library": "Azure.AI.AnomalyDetector",
+      "Path": "sdk/anomalydetector/Azure.AI.AnomalyDetector"
+    },
+    {
+      "Service": "batch",
+      "Library": "Azure.Compute.Batch",
+      "Path": "sdk/batch/Azure.Compute.Batch"
+    },
+    {
+      "Service": "cognitivelanguage",
+      "Library": "Azure.AI.Language.Conversations",
+      "Path": "sdk/cognitivelanguage/Azure.AI.Language.Conversations"
+    },
+    {
+      "Service": "cognitivelanguage",
+      "Library": "Azure.AI.Language.Conversations.Authoring",
+      "Path": "sdk/cognitivelanguage/Azure.AI.Language.Conversations.Authoring"
+    },
+    {
+      "Service": "cognitivelanguage",
+      "Library": "Azure.AI.Language.Text",
+      "Path": "sdk/cognitivelanguage/Azure.AI.Language.Text"
+    },
+    {
+      "Service": "cognitivelanguage",
+      "Library": "Azure.AI.Language.Text.Authoring",
+      "Path": "sdk/cognitivelanguage/Azure.AI.Language.Text.Authoring"
+    },
+    {
+      "Service": "communication",
+      "Library": "Azure.Communication.JobRouter",
+      "Path": "sdk/communication/Azure.Communication.JobRouter"
+    },
+    {
+      "Service": "communication",
+      "Library": "Azure.Communication.Messages",
+      "Path": "sdk/communication/Azure.Communication.Messages"
+    },
+    {
+      "Service": "communication",
+      "Library": "Azure.Communication.ProgrammableConnectivity",
+      "Path": "sdk/communication/Azure.Communication.ProgrammableConnectivity"
+    },
+    {
+      "Service": "confidentialledger",
+      "Library": "Azure.Security.CodeTransparency",
+      "Path": "sdk/confidentialledger/Azure.Security.CodeTransparency"
+    },
+    {
+      "Service": "contentsafety",
+      "Library": "Azure.AI.ContentSafety",
+      "Path": "sdk/contentsafety/Azure.AI.ContentSafety"
+    },
+    {
+      "Service": "devcenter",
+      "Library": "Azure.Developer.DevCenter",
+      "Path": "sdk/devcenter/Azure.Developer.DevCenter"
+    },
+    {
+      "Service": "documentintelligence",
+      "Library": "Azure.AI.DocumentIntelligence",
+      "Path": "sdk/documentintelligence/Azure.AI.DocumentIntelligence"
+    },
+    {
+      "Service": "easm",
+      "Library": "Azure.Analytics.Defender.Easm",
+      "Path": "sdk/easm/Azure.Analytics.Defender.Easm"
+    },
+    {
+      "Service": "face",
+      "Library": "Azure.AI.Vision.Face",
+      "Path": "sdk/face/Azure.AI.Vision.Face"
+    },
+    {
+      "Service": "loadtestservice",
+      "Library": "Azure.Developer.LoadTesting",
+      "Path": "sdk/loadtestservice/Azure.Developer.LoadTesting"
+    },
+    {
+      "Service": "onlineexperimentation",
+      "Library": "Azure.Analytics.OnlineExperimentation",
+      "Path": "sdk/onlineexperimentation/Azure.Analytics.OnlineExperimentation"
+    },
+    {
+      "Service": "purview",
+      "Library": "Azure.Analytics.Purview.DataMap",
+      "Path": "sdk/purview/Azure.Analytics.Purview.DataMap"
+    },
+    {
+      "Service": "translation",
+      "Library": "Azure.AI.Translation.Document",
+      "Path": "sdk/translation/Azure.AI.Translation.Document"
+    },
+    {
+      "Service": "translation",
+      "Library": "Azure.AI.Translation.Text",
+      "Path": "sdk/translation/Azure.AI.Translation.Text"
+    }
+  ],
+  "UniqueServices": [
+    "anomalydetector",
+    "batch",
+    "cognitivelanguage",
+    "communication",
+    "confidentialledger",
+    "contentsafety",
+    "devcenter",
+    "documentintelligence",
+    "easm",
+    "face",
+    "loadtestservice",
+    "onlineexperimentation",
+    "purview",
+    "translation"
+  ],
+  "TotalCount": 20
+}
