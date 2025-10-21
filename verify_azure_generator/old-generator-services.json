@@ -1,4 +1,22 @@
 {
+  "UniqueServices": [
+    "anomalydetector",
+    "batch",
+    "cognitivelanguage",
+    "communication",
+    "confidentialledger",
+    "contentsafety",
+    "devcenter",
+    "documentintelligence",
+    "easm",
+    "face",
+    "loadtestservice",
+    "onlineexperimentation",
+    "purview",
+    "translation"
+  ],
+  "TotalCount": 20,
+  "SourceFile": "D:\\work\\sdk2\\verify_azure_generator\\..\\doc\\GeneratorMigration\\Library_Inventory.md",
   "Libraries": [
     {
       "Service": "anomalydetector",
@@ -101,21 +119,5 @@
       "Path": "sdk/translation/Azure.AI.Translation.Text"
     }
   ],
-  "UniqueServices": [
-    "anomalydetector",
-    "batch",
-    "cognitivelanguage",
-    "communication",
-    "confidentialledger",
-    "contentsafety",
-    "devcenter",
-    "documentintelligence",
-    "easm",
-    "face",
-    "loadtestservice",
-    "onlineexperimentation",
-    "purview",
-    "translation"
-  ],
-  "TotalCount": 20
+  "ExtractionDate": "2025-10-21T14:09:22.2524535+08:00"
 }

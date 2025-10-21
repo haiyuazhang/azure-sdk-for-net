@@ -2,18 +2,33 @@
 
 <#
 .SYNOPSIS
-    Processes all services from old-generator-services.json to migrate them from old TypeSpec generator
+    Extracts and processes services from old TypeSpec generator migration
 
 .DESCRIPTION
-    This script reads the old-generator-services.json file and processes each service to:
+    This script can either extract services from Library_Inventory.md or process existing services.
+    
+    Step 0 (Extract): Extracts services from the "Data Plane Libraries using TypeSpec (Old Generator)" 
+    section of Library_Inventory.md and saves to JSON file.
+    
+    Steps 1-8 (Process): Processes services from the JSON file to migrate them:
     1. Find the relative path and convert to absolute path
     2. Navigate to the service directory
     3. Update tsp-location.yaml
-    4. Checkout spec
-    5. Update tspconfig.yaml
-    6. Generate code
-    7. Build code
-    8. Generate report
+    4. Update .csproj file
+    5. Checkout spec
+    6. Update tspconfig.yaml
+    7. Generate code
+    8. Build code
+    9. Generate report
+
+.PARAMETER Mode
+    Operation mode: 'Extract', 'Process', or 'Both'. 
+    - Extract: Only extract services from Library_Inventory.md
+    - Process: Only process existing services from JSON file
+    - Both: Extract first, then process. Defaults to 'Both'.
+
+.PARAMETER InputFile
+    Path to the Library_Inventory.md file for extraction. Defaults to the standard location in the repository.
 
 .PARAMETER ServicesJsonFile
     Path to the old-generator-services.json file. Defaults to "old-generator-services.json" in current directory.
@@ -28,19 +43,34 @@
     Optional filter to process only specific services. Supports wildcards.
 
 .PARAMETER SkipSteps
-    Array of step numbers to skip (1-9). Useful for debugging or partial runs.
+    Array of step numbers to skip (0-9). Useful for debugging or partial runs.
+    Step 0 = Extract services, Steps 1-9 = Process services
 
 .EXAMPLE
     .\Process-OldGeneratorServices.ps1
+    Extracts services and then processes them
     
 .EXAMPLE
-    .\Process-OldGeneratorServices.ps1 -ServiceFilter "communication*" -SkipSteps @(6,7)
+    .\Process-OldGeneratorServices.ps1 -Mode Extract
+    Only extracts services to JSON file
+    
+.EXAMPLE
+    .\Process-OldGeneratorServices.ps1 -Mode Process -ServiceFilter "communication*" -SkipSteps @(6,7)
+    Only processes existing services with filter and skipped steps
 
 .EXAMPLE
     .\Process-OldGeneratorServices.ps1 -ServicesJsonFile "custom-services.json" -RepoRoot "C:\MyRepo"
+    Uses custom file paths
 #>
 
 param(
+    [Parameter()]
+    [ValidateSet('Extract', 'Process', 'Both')]
+    [string]$Mode = 'Both',
+    
+    [Parameter()]
+    [string]$InputFile = "$PSScriptRoot\..\doc\GeneratorMigration\Library_Inventory.md",
+    
     [Parameter()]
     [string]$ServicesJsonFile = "old-generator-services.json",
     
@@ -61,7 +91,7 @@ param(
 # Global variables
 $script:ProcessedServices = @()
 $script:FailedServices = @()
-$script:LogFile = "process-old-generator-services-$(Get-Date -Format 'yyyyMMdd-HHmmss').log"
+$script:LogFile = Join-Path $PSScriptRoot "process-old-generator-services-$(Get-Date -Format 'yyyyMMdd-HHmmss').log"
 
 #region Logging Functions
 function Write-Log {
@@ -116,6 +146,122 @@ function Write-Step {
     
     Write-Log "Step ${StepNumber}: $StepName" -Level Info -Service $Service
     return $true
+}
+#endregion
+
+#region Step 0 - Extract Services Functions
+function Extract-OldGeneratorServices {
+    param([string[]]$Content)
+    
+    $services = @()
+    $inOldGeneratorSection = $false
+    $inTable = $false
+    
+    foreach ($line in $Content) {
+        # Check if we've reached the "Data Plane Libraries using TypeSpec (Old Generator)" section
+        if ($line -match "^## Data Plane Libraries using TypeSpec \(Old Generator\)") {
+            $inOldGeneratorSection = $true
+            Write-Log "Found Old Generator section" -Level Verbose
+            continue
+        }
+        
+        # Check if we've reached the next section (exit the old generator section)
+        if ($inOldGeneratorSection -and $line -match "^## ") {
+            Write-Log "Exiting Old Generator section" -Level Verbose
+            break
+        }
+        
+        # Check if we're in the table header
+        if ($inOldGeneratorSection -and $line -match "^\| Service \| Library \| Path \|") {
+            $inTable = $true
+            Write-Log "Found table header" -Level Verbose
+            continue
+        }
+        
+        # Skip the table separator line
+        if ($inTable -and $line -match "^\| ------- \| ------- \| ---- \|") {
+            continue
+        }
+        
+        # Extract service data from table rows
+        if ($inTable -and $line -match "^\| ([^|]+) \| ([^|]+) \| ([^|]+) \|") {
+            $service = $matches[1].Trim()
+            $library = $matches[2].Trim()
+            $path = $matches[3].Trim()
+            
+            $serviceInfo = [PSCustomObject]@{
+                Service = $service
+                Library = $library
+                Path = $path
+            }
+            
+            $services += $serviceInfo
+            Write-Log "Found service: $service" -Level Verbose
+        }
+    }
+    
+    return $services
+}
+
+function Step0-ExtractServices {
+    if (-not (Write-Step -StepNumber 0 -StepName "Extract services from Library_Inventory.md" -Service "System")) {
+        return $true
+    }
+    
+    try {
+        # Check if input file exists
+        if (-not (Test-Path $InputFile)) {
+            Write-Log "ERROR: Input file not found: $InputFile" -Level Error
+            return $false
+        }
+        
+        Write-Log "Reading Library_Inventory.md from: $InputFile" -Level Info
+        
+        # Read the content
+        $content = Get-Content -Path $InputFile -Encoding UTF8
+        
+        # Extract services
+        $services = Extract-OldGeneratorServices -Content $content
+        
+        if ($services.Count -eq 0) {
+            Write-Log "WARNING: No services found in the Old Generator section" -Level Warning
+            return $false
+        }
+        
+        Write-Log "Found $($services.Count) services using TypeSpec (Old Generator)" -Level Info
+        
+        # Create JSON output
+        $result = @{
+            TotalCount = $services.Count
+            UniqueServices = ($services.Service | Sort-Object -Unique)
+            Libraries = $services
+            ExtractionDate = Get-Date
+            SourceFile = $InputFile
+        }
+        
+        # Save to JSON file
+        $result | ConvertTo-Json -Depth 3 | Set-Content -Path $ServicesJsonFile -Encoding UTF8
+        Write-Log "Services extracted and saved to: $ServicesJsonFile" -Level Info
+        
+        # Summary
+        $uniqueServiceCount = ($services.Service | Sort-Object -Unique).Count
+        Write-Log "Extraction Summary:" -Level Info
+        Write-Log "  Total libraries: $($services.Count)" -Level Info
+        Write-Log "  Unique services: $uniqueServiceCount" -Level Info
+        
+        if ($uniqueServiceCount -gt 0) {
+            Write-Log "Unique service names:" -Level Info
+            $services.Service | Sort-Object -Unique | ForEach-Object { 
+                Write-Log "  - $_" -Level Info
+            }
+        }
+        
+        return $true
+    }
+    catch {
+        Write-Log "ERROR: Failed to extract services - $($_.Exception.Message)" -Level Error
+        return $false
+    }
 }
 #endregion
 
@@ -357,7 +503,27 @@ function Step5-CheckoutSpec {
             } else {
                 Write-Log "Need to checkout commit $commit (current: $currentCommit)" -Level Info -Service $ServiceName
                 
-                # Checkout the specific commit
+                # Clean the repository before checkout
+                Write-Log "Cleaning repository before checkout" -Level Info -Service $ServiceName
+                
+                # Reset all changes (staged and unstaged)
+                Write-Log "Resetting all changes with git reset --hard HEAD" -Level Verbose -Service $ServiceName
+                $gitResetResult = & git reset --hard HEAD 2>&1
+                if ($LASTEXITCODE -ne 0) {
+                    Write-Log "ERROR: Failed to reset repository - $gitResetResult" -Level Error -Service $ServiceName
+                    return $false
+                }
+                
+                # Clean untracked files and directories
+                Write-Log "Cleaning untracked files with git clean -fd" -Level Verbose -Service $ServiceName
+                $gitCleanResult = & git clean -fd 2>&1
+                if ($LASTEXITCODE -ne 0) {
+                    Write-Log "ERROR: Failed to clean untracked files - $gitCleanResult" -Level Error -Service $ServiceName
+                    return $false
+                }
+                
+                # Now attempt the checkout
+                Write-Log "Attempting to checkout commit: $commit" -Level Info -Service $ServiceName
                 $gitCheckoutResult = & git checkout $commit 2>&1
                 if ($LASTEXITCODE -ne 0) {
                     Write-Log "ERROR: Failed to checkout commit $commit - $gitCheckoutResult" -Level Error -Service $ServiceName
@@ -550,7 +716,7 @@ $($result | Out-String)
             
             if ($LASTEXITCODE -eq 0) {
                 Write-Log "Code generation completed successfully" -Level Info -Service $ServiceName
-                Write-Log "Generation output: $($result | Out-String)" -Level Debug -Service $ServiceName
+                Write-Log "Generation output: $($result | Out-String)" -Level Verbose -Service $ServiceName
                 return $true
             } else {
                 Write-Log "ERROR: Code generation failed with exit code $LASTEXITCODE" -Level Error -Service $ServiceName
@@ -614,7 +780,7 @@ $($result | Out-String)
             
             if ($LASTEXITCODE -eq 0) {
                 Write-Log "Build completed successfully" -Level Info -Service $ServiceName
-                Write-Log "Build output: $($result | Out-String)" -Level Debug -Service $ServiceName
+                Write-Log "Build output: $($result | Out-String)" -Level Verbose -Service $ServiceName
                 return $true
             } else {
                 Write-Log "ERROR: Build failed with exit code $LASTEXITCODE" -Level Error -Service $ServiceName
@@ -755,8 +921,10 @@ function Process-Service {
 #endregion
 
 #region Main Execution
+#region Main Execution
 function Main {
-    Write-Log "Starting Old Generator Services Processing" -Level Info
+    Write-Log "Starting Old Generator Services Migration Pipeline" -Level Info
+    Write-Log "Mode: $Mode" -Level Info
     Write-Log "Repository Root: $RepoRoot" -Level Info
     Write-Log "Services JSON File: $ServicesJsonFile" -Level Info
     Write-Log "Log Level: $LogLevel" -Level Info
@@ -770,88 +938,110 @@ function Main {
         Write-Log "Service Filter: $ServiceFilter" -Level Info
     }
     
-    # Check if services JSON file exists
-    if (-not (Test-Path $ServicesJsonFile)) {
-        Write-Log "ERROR: Services JSON file not found: $ServicesJsonFile" -Level Error
-        return 1
+    # Step 0: Extract services (if needed)
+    if ($Mode -in @('Extract', 'Both')) {
+        Write-Log "=== EXTRACTION PHASE ===" -Level Info
+        
+        if (-not (Step0-ExtractServices)) {
+            Write-Log "FATAL ERROR: Failed to extract services" -Level Error
+            return 1
+        }
+        
+        Write-Log "Extraction phase completed successfully" -Level Info
     }
     
-    # Check if repository root exists
-    if (-not (Test-Path $RepoRoot)) {
-        Write-Log "ERROR: Repository root not found: $RepoRoot" -Level Error
-        return 1
+    # Processing phase (if needed)
+    if ($Mode -in @('Process', 'Both')) {
+        Write-Log "=== PROCESSING PHASE ===" -Level Info
+        
+        # Check if services JSON file exists
+        if (-not (Test-Path $ServicesJsonFile)) {
+            Write-Log "ERROR: Services JSON file not found: $ServicesJsonFile" -Level Error
+            Write-Log "       Run with -Mode Extract first or provide existing JSON file" -Level Error
+            return 1
+        }
+        
+        # Check if repository root exists
+        if (-not (Test-Path $RepoRoot)) {
+            Write-Log "ERROR: Repository root not found: $RepoRoot" -Level Error
+            return 1
+        }
+        
+        try {
+            # Load services from JSON
+            $servicesData = Get-Content -Path $ServicesJsonFile -Raw | ConvertFrom-Json
+            $libraries = $servicesData.Libraries
+            
+            Write-Log "Loaded $($libraries.Count) libraries from JSON file" -Level Info
+            
+            # Apply service filter if specified
+            if ($ServiceFilter) {
+                $libraries = $libraries | Where-Object { $_.Service -like $ServiceFilter }
+                Write-Log "Filtered to $($libraries.Count) libraries matching filter: $ServiceFilter" -Level Info
+            }
+            
+            if ($libraries.Count -eq 0) {
+                Write-Log "No libraries to process" -Level Warning
+                return 0
+            }
+            
+            # Group by service to get unique services
+            $serviceGroups = $libraries | Group-Object -Property Service
+            Write-Log "Processing $($serviceGroups.Count) unique services" -Level Info
+            
+            # Process each service group
+            foreach ($serviceGroup in $serviceGroups) {
+                $serviceName = $serviceGroup.Name
+                $serviceLibraries = $serviceGroup.Group
+                
+                Write-Log "Processing service group: $serviceName with $($serviceLibraries.Count) libraries" -Level Info
+                
+                # Process each library in the service
+                foreach ($library in $serviceLibraries) {
+                    Process-Service -ServiceInfo $library
+                }
+            }
+            
+            # Generate final summary
+            Write-Log "Processing completed" -Level Info
+            Write-Log "Processed services: $($script:ProcessedServices.Count)" -Level Info
+            Write-Log "Failed services: $($script:FailedServices.Count)" -Level Info
+            
+            if ($script:FailedServices.Count -gt 0) {
+                Write-Log "Failed services:" -Level Warning
+                foreach ($failed in $script:FailedServices) {
+                    Write-Log "  - $($failed.Service) ($($failed.Library)): $($failed.Error)" -Level Warning
+                }
+            }
+            
+            # Export results
+            $results = @{
+                Summary = @{
+                    TotalProcessed = $script:ProcessedServices.Count
+                    TotalFailed = $script:FailedServices.Count
+                    ProcessingDate = Get-Date
+                    LogFile = $LogFile
+                    Mode = $Mode
+                    ServiceFilter = $ServiceFilter
+                    SkippedSteps = $SkipSteps
+                }
+                ProcessedServices = $script:ProcessedServices
+                FailedServices = $script:FailedServices
+            }
+            
+            $resultsFile = "processing-results-$(Get-Date -Format 'yyyyMMdd-HHmmss').json"
+            $results | ConvertTo-Json -Depth 3 | Set-Content -Path $resultsFile
+            Write-Log "Results saved to: $resultsFile" -Level Info
+            
+        }
+        catch {
+            Write-Log "FATAL ERROR in processing phase: $($_.Exception.Message)" -Level Error
+            return 1
+        }
     }
     
-    try {
-        # Load services from JSON
-        $servicesData = Get-Content -Path $ServicesJsonFile -Raw | ConvertFrom-Json
-        $libraries = $servicesData.Libraries
-        
-        Write-Log "Loaded $($libraries.Count) libraries from JSON file" -Level Info
-        
-        # Apply service filter if specified
-        if ($ServiceFilter) {
-            $libraries = $libraries | Where-Object { $_.Service -like $ServiceFilter }
-            Write-Log "Filtered to $($libraries.Count) libraries matching filter: $ServiceFilter" -Level Info
-        }
-        
-        if ($libraries.Count -eq 0) {
-            Write-Log "No libraries to process" -Level Warning
-            return 0
-        }
-        
-        # Group by service to get unique services
-        $serviceGroups = $libraries | Group-Object -Property Service
-        Write-Log "Processing $($serviceGroups.Count) unique services" -Level Info
-        
-        # Process each service group
-        foreach ($serviceGroup in $serviceGroups) {
-            $serviceName = $serviceGroup.Name
-            $serviceLibraries = $serviceGroup.Group
-            
-            Write-Log "Processing service group: $serviceName with $($serviceLibraries.Count) libraries" -Level Info
-            
-            # Process each library in the service
-            foreach ($library in $serviceLibraries) {
-                Process-Service -ServiceInfo $library
-            }
-        }
-        
-        # Generate final summary
-        Write-Log "Processing completed" -Level Info
-        Write-Log "Processed services: $($script:ProcessedServices.Count)" -Level Info
-        Write-Log "Failed services: $($script:FailedServices.Count)" -Level Info
-        
-        if ($script:FailedServices.Count -gt 0) {
-            Write-Log "Failed services:" -Level Warning
-            foreach ($failed in $script:FailedServices) {
-                Write-Log "  - $($failed.Service) ($($failed.Library)): $($failed.Error)" -Level Warning
-            }
-        }
-        
-        # Export results
-        $results = @{
-            Summary = @{
-                TotalProcessed = $script:ProcessedServices.Count
-                TotalFailed = $script:FailedServices.Count
-                ProcessingDate = Get-Date
-                DryRun = $DryRun
-                LogFile = $LogFile
-            }
-            ProcessedServices = $script:ProcessedServices
-            FailedServices = $script:FailedServices
-        }
-        
-        $resultsFile = "processing-results-$(Get-Date -Format 'yyyyMMdd-HHmmss').json"
-        $results | ConvertTo-Json -Depth 3 | Set-Content -Path $resultsFile
-        Write-Log "Results saved to: $resultsFile" -Level Info
-        
-        return 0
-    }
-    catch {
-        Write-Log "FATAL ERROR: $($_.Exception.Message)" -Level Error
-        return 1
-    }
+    Write-Log "=== PIPELINE COMPLETED ===" -Level Info
+    return 0
 }
 
 # Execute main function
