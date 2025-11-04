@@ -1,0 +1,17 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+D:\work\sdk2\sdk\iotoperations\Azure.ResourceManager.IotOperations\src\Customization\Models\AkriConnectorTemplateDiagnostics.cs(10,28): error CS0262: Partial declarations of 'AkriConnectorTemplateDiagnostics' have conflicting accessibility modifiers [D:\work\sdk2\sdk\iotoperations\Azure.ResourceManager.IotOperations\src\Azure.ResourceManager.IotOperations.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\iotoperations\Azure.ResourceManager.IotOperations\src\Customization\Models\BrokerAuthenticatorCustomAuth.cs(12,28): error CS0262: Partial declarations of 'BrokerAuthenticatorCustomAuth' have conflicting accessibility modifiers [D:\work\sdk2\sdk\iotoperations\Azure.ResourceManager.IotOperations\src\Azure.ResourceManager.IotOperations.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\iotoperations\Azure.ResourceManager.IotOperations\src\Customization\Models\AkriConnectorTemplateDiagnostics.cs(10,28): error CS0262: Partial declarations of 'AkriConnectorTemplateDiagnostics' have conflicting accessibility modifiers [D:\work\sdk2\sdk\iotoperations\Azure.ResourceManager.IotOperations\src\Azure.ResourceManager.IotOperations.csproj::TargetFramework=net8.0]
+D:\work\sdk2\sdk\iotoperations\Azure.ResourceManager.IotOperations\src\Customization\Models\BrokerAuthenticatorCustomAuth.cs(12,28): error CS0262: Partial declarations of 'BrokerAuthenticatorCustomAuth' have conflicting accessibility modifiers [D:\work\sdk2\sdk\iotoperations\Azure.ResourceManager.IotOperations\src\Azure.ResourceManager.IotOperations.csproj::TargetFramework=net8.0]
+
+Build FAILED.
+
+D:\work\sdk2\sdk\iotoperations\Azure.ResourceManager.IotOperations\src\Customization\Models\AkriConnectorTemplateDiagnostics.cs(10,28): error CS0262: Partial declarations of 'AkriConnectorTemplateDiagnostics' have conflicting accessibility modifiers [D:\work\sdk2\sdk\iotoperations\Azure.ResourceManager.IotOperations\src\Azure.ResourceManager.IotOperations.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\iotoperations\Azure.ResourceManager.IotOperations\src\Customization\Models\BrokerAuthenticatorCustomAuth.cs(12,28): error CS0262: Partial declarations of 'BrokerAuthenticatorCustomAuth' have conflicting accessibility modifiers [D:\work\sdk2\sdk\iotoperations\Azure.ResourceManager.IotOperations\src\Azure.ResourceManager.IotOperations.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\iotoperations\Azure.ResourceManager.IotOperations\src\Customization\Models\AkriConnectorTemplateDiagnostics.cs(10,28): error CS0262: Partial declarations of 'AkriConnectorTemplateDiagnostics' have conflicting accessibility modifiers [D:\work\sdk2\sdk\iotoperations\Azure.ResourceManager.IotOperations\src\Azure.ResourceManager.IotOperations.csproj::TargetFramework=net8.0]
+D:\work\sdk2\sdk\iotoperations\Azure.ResourceManager.IotOperations\src\Customization\Models\BrokerAuthenticatorCustomAuth.cs(12,28): error CS0262: Partial declarations of 'BrokerAuthenticatorCustomAuth' have conflicting accessibility modifiers [D:\work\sdk2\sdk\iotoperations\Azure.ResourceManager.IotOperations\src\Azure.ResourceManager.IotOperations.csproj::TargetFramework=net8.0]
+    0 Warning(s)
+    4 Error(s)
+
+Time Elapsed 00:00:40.84

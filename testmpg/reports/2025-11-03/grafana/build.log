@@ -1,0 +1,18 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  InheritDocTask replaced 349 of 349 inheritdoc tags and removed 49 private member docs in D:\work\sdk2\artifacts\obj\Azure.ResourceManager.Grafana\Debug\netstandard2.0\Azure.ResourceManager.Grafana.xml
+  Azure.ResourceManager.Grafana -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.Grafana\Debug\netstandard2.0\Azure.ResourceManager.Grafana.dll
+  InheritDocTask replaced 349 of 349 inheritdoc tags and removed 49 private member docs in D:\work\sdk2\artifacts\obj\Azure.ResourceManager.Grafana\Debug\net8.0\Azure.ResourceManager.Grafana.xml
+  Azure.ResourceManager.Grafana -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.Grafana\Debug\net8.0\Azure.ResourceManager.Grafana.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net462\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net9.0\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net8.0\Azure.Core.TestFramework.dll
+  Azure.ResourceManager.Grafana.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.Grafana.Tests\Debug\net8.0\Azure.ResourceManager.Grafana.Tests.dll
+  Azure.ResourceManager.Grafana.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.Grafana.Tests\Debug\net9.0\Azure.ResourceManager.Grafana.Tests.dll
+  Azure.ResourceManager.Grafana.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.Grafana.Tests\Debug\net462\Azure.ResourceManager.Grafana.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:17.34

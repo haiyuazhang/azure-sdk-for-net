@@ -1,0 +1,18 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  InheritDocTask replaced 57 of 57 inheritdoc tags and removed 40 private member docs in D:\work\sdk2\artifacts\obj\Azure.ResourceManager.WeightsAndBiases\Debug\netstandard2.0\Azure.ResourceManager.WeightsAndBiases.xml
+  Azure.ResourceManager.WeightsAndBiases -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.WeightsAndBiases\Debug\netstandard2.0\Azure.ResourceManager.WeightsAndBiases.dll
+  InheritDocTask replaced 57 of 57 inheritdoc tags and removed 40 private member docs in D:\work\sdk2\artifacts\obj\Azure.ResourceManager.WeightsAndBiases\Debug\net8.0\Azure.ResourceManager.WeightsAndBiases.xml
+  Azure.ResourceManager.WeightsAndBiases -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.WeightsAndBiases\Debug\net8.0\Azure.ResourceManager.WeightsAndBiases.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net462\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net8.0\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net9.0\Azure.Core.TestFramework.dll
+  Azure.ResourceManager.WeightsAndBiases.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.WeightsAndBiases.Tests\Debug\net462\Azure.ResourceManager.WeightsAndBiases.Tests.dll
+  Azure.ResourceManager.WeightsAndBiases.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.WeightsAndBiases.Tests\Debug\net9.0\Azure.ResourceManager.WeightsAndBiases.Tests.dll
+  Azure.ResourceManager.WeightsAndBiases.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.WeightsAndBiases.Tests\Debug\net8.0\Azure.ResourceManager.WeightsAndBiases.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:06.09

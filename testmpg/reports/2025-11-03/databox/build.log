@@ -1,0 +1,17 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+D:\work\sdk2\sdk\databox\Azure.ResourceManager.DataBox\src\Custom\Models\DataBoxOrderPreferences.cs(12,16): error CS0246: The type or namespace name 'TransportShipmentType' could not be found (are you missing a using directive or an assembly reference?) [D:\work\sdk2\sdk\databox\Azure.ResourceManager.DataBox\src\Azure.ResourceManager.DataBox.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\databox\Azure.ResourceManager.DataBox\src\Custom\Models\DataBoxValidateAddressContent.cs(12,16): error CS0246: The type or namespace name 'TransportShipmentType' could not be found (are you missing a using directive or an assembly reference?) [D:\work\sdk2\sdk\databox\Azure.ResourceManager.DataBox\src\Azure.ResourceManager.DataBox.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\databox\Azure.ResourceManager.DataBox\src\Custom\Models\DataBoxOrderPreferences.cs(12,16): error CS0246: The type or namespace name 'TransportShipmentType' could not be found (are you missing a using directive or an assembly reference?) [D:\work\sdk2\sdk\databox\Azure.ResourceManager.DataBox\src\Azure.ResourceManager.DataBox.csproj::TargetFramework=net8.0]
+D:\work\sdk2\sdk\databox\Azure.ResourceManager.DataBox\src\Custom\Models\DataBoxValidateAddressContent.cs(12,16): error CS0246: The type or namespace name 'TransportShipmentType' could not be found (are you missing a using directive or an assembly reference?) [D:\work\sdk2\sdk\databox\Azure.ResourceManager.DataBox\src\Azure.ResourceManager.DataBox.csproj::TargetFramework=net8.0]
+
+Build FAILED.
+
+D:\work\sdk2\sdk\databox\Azure.ResourceManager.DataBox\src\Custom\Models\DataBoxOrderPreferences.cs(12,16): error CS0246: The type or namespace name 'TransportShipmentType' could not be found (are you missing a using directive or an assembly reference?) [D:\work\sdk2\sdk\databox\Azure.ResourceManager.DataBox\src\Azure.ResourceManager.DataBox.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\databox\Azure.ResourceManager.DataBox\src\Custom\Models\DataBoxValidateAddressContent.cs(12,16): error CS0246: The type or namespace name 'TransportShipmentType' could not be found (are you missing a using directive or an assembly reference?) [D:\work\sdk2\sdk\databox\Azure.ResourceManager.DataBox\src\Azure.ResourceManager.DataBox.csproj::TargetFramework=netstandard2.0]
+D:\work\sdk2\sdk\databox\Azure.ResourceManager.DataBox\src\Custom\Models\DataBoxOrderPreferences.cs(12,16): error CS0246: The type or namespace name 'TransportShipmentType' could not be found (are you missing a using directive or an assembly reference?) [D:\work\sdk2\sdk\databox\Azure.ResourceManager.DataBox\src\Azure.ResourceManager.DataBox.csproj::TargetFramework=net8.0]
+D:\work\sdk2\sdk\databox\Azure.ResourceManager.DataBox\src\Custom\Models\DataBoxValidateAddressContent.cs(12,16): error CS0246: The type or namespace name 'TransportShipmentType' could not be found (are you missing a using directive or an assembly reference?) [D:\work\sdk2\sdk\databox\Azure.ResourceManager.DataBox\src\Azure.ResourceManager.DataBox.csproj::TargetFramework=net8.0]
+    0 Warning(s)
+    4 Error(s)
+
+Time Elapsed 00:00:20.09

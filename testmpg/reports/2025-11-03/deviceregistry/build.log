@@ -1,0 +1,20 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Ran ApiCompat against c:\NUGET_PACKAGES\azure.resourcemanager.deviceregistry\1.0.0\lib\netstandard2.0\Azure.ResourceManager.DeviceRegistry.dll using assemblies from D:\work\sdk2\artifacts\obj\Azure.ResourceManager.DeviceRegistry\Debug\netstandard2.0\
+  InheritDocTask replaced 117 of 117 inheritdoc tags and removed 86 private member docs in D:\work\sdk2\artifacts\obj\Azure.ResourceManager.DeviceRegistry\Debug\netstandard2.0\Azure.ResourceManager.DeviceRegistry.xml
+  Azure.ResourceManager.DeviceRegistry -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.DeviceRegistry\Debug\netstandard2.0\Azure.ResourceManager.DeviceRegistry.dll
+  Ran ApiCompat against c:\NUGET_PACKAGES\azure.resourcemanager.deviceregistry\1.0.0\lib\netstandard2.0\Azure.ResourceManager.DeviceRegistry.dll using assemblies from D:\work\sdk2\artifacts\obj\Azure.ResourceManager.DeviceRegistry\Debug\net8.0\
+  InheritDocTask replaced 117 of 117 inheritdoc tags and removed 86 private member docs in D:\work\sdk2\artifacts\obj\Azure.ResourceManager.DeviceRegistry\Debug\net8.0\Azure.ResourceManager.DeviceRegistry.xml
+  Azure.ResourceManager.DeviceRegistry -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.DeviceRegistry\Debug\net8.0\Azure.ResourceManager.DeviceRegistry.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net462\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net9.0\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net8.0\Azure.Core.TestFramework.dll
+  Azure.ResourceManager.DeviceRegistry.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.DeviceRegistry.Tests\Debug\net462\Azure.ResourceManager.DeviceRegistry.Tests.dll
+  Azure.ResourceManager.DeviceRegistry.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.DeviceRegistry.Tests\Debug\net8.0\Azure.ResourceManager.DeviceRegistry.Tests.dll
+  Azure.ResourceManager.DeviceRegistry.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.DeviceRegistry.Tests\Debug\net9.0\Azure.ResourceManager.DeviceRegistry.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:01:53.70

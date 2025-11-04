@@ -1,0 +1,18 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  InheritDocTask replaced 55 of 55 inheritdoc tags and removed 37 private member docs in D:\work\sdk2\artifacts\obj\Azure.ResourceManager.InformaticaDataManagement\Debug\netstandard2.0\Azure.ResourceManager.InformaticaDataManagement.xml
+  Azure.ResourceManager.InformaticaDataManagement -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.InformaticaDataManagement\Debug\netstandard2.0\Azure.ResourceManager.InformaticaDataManagement.dll
+  InheritDocTask replaced 55 of 55 inheritdoc tags and removed 37 private member docs in D:\work\sdk2\artifacts\obj\Azure.ResourceManager.InformaticaDataManagement\Debug\net8.0\Azure.ResourceManager.InformaticaDataManagement.xml
+  Azure.ResourceManager.InformaticaDataManagement -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.InformaticaDataManagement\Debug\net8.0\Azure.ResourceManager.InformaticaDataManagement.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net9.0\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net8.0\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net462\Azure.Core.TestFramework.dll
+  Azure.ResourceManager.InformaticaDataManagement.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.InformaticaDataManagement.Tests\Debug\net9.0\Azure.ResourceManager.InformaticaDataManagement.Tests.dll
+  Azure.ResourceManager.InformaticaDataManagement.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.InformaticaDataManagement.Tests\Debug\net462\Azure.ResourceManager.InformaticaDataManagement.Tests.dll
+  Azure.ResourceManager.InformaticaDataManagement.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.InformaticaDataManagement.Tests\Debug\net8.0\Azure.ResourceManager.InformaticaDataManagement.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:01:01.55

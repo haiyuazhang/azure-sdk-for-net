@@ -1,0 +1,23 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Ran ApiCompat against c:\NUGET_PACKAGES\azure.resourcemanager.carbonoptimization\1.0.0\lib\netstandard2.0\Azure.ResourceManager.CarbonOptimization.dll using assemblies from D:\work\sdk2\artifacts\obj\Azure.ResourceManager.CarbonOptimization\Debug\net8.0\
+  Ran ApiCompat against c:\NUGET_PACKAGES\azure.resourcemanager.carbonoptimization\1.0.0\lib\netstandard2.0\Azure.ResourceManager.CarbonOptimization.dll using assemblies from D:\work\sdk2\artifacts\obj\Azure.ResourceManager.CarbonOptimization\Debug\netstandard2.0\
+  InheritDocTask replaced 167 of 167 inheritdoc tags and removed 13 private member docs in D:\work\sdk2\artifacts\obj\Azure.ResourceManager.CarbonOptimization\Debug\netstandard2.0\Azure.ResourceManager.CarbonOptimization.xml
+  InheritDocTask replaced 167 of 167 inheritdoc tags and removed 13 private member docs in D:\work\sdk2\artifacts\obj\Azure.ResourceManager.CarbonOptimization\Debug\net8.0\Azure.ResourceManager.CarbonOptimization.xml
+  Azure.ResourceManager.CarbonOptimization -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.CarbonOptimization\Debug\netstandard2.0\Azure.ResourceManager.CarbonOptimization.dll
+  Azure.ResourceManager.CarbonOptimization -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.CarbonOptimization\Debug\net8.0\Azure.ResourceManager.CarbonOptimization.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net8.0\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net462\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net9.0\Azure.Core.TestFramework.dll
+  Azure.ResourceManager.CarbonOptimization.Samples -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.CarbonOptimization.Samples\Debug\net462\Azure.ResourceManager.CarbonOptimization.Samples.dll
+  Azure.ResourceManager.CarbonOptimization.Samples -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.CarbonOptimization.Samples\Debug\net8.0\Azure.ResourceManager.CarbonOptimization.Samples.dll
+  Azure.ResourceManager.CarbonOptimization.Samples -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.CarbonOptimization.Samples\Debug\net9.0\Azure.ResourceManager.CarbonOptimization.Samples.dll
+  Azure.ResourceManager.CarbonOptimization.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.CarbonOptimization.Tests\Debug\net462\Azure.ResourceManager.CarbonOptimization.Tests.dll
+  Azure.ResourceManager.CarbonOptimization.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.CarbonOptimization.Tests\Debug\net8.0\Azure.ResourceManager.CarbonOptimization.Tests.dll
+  Azure.ResourceManager.CarbonOptimization.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.CarbonOptimization.Tests\Debug\net9.0\Azure.ResourceManager.CarbonOptimization.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:05.28

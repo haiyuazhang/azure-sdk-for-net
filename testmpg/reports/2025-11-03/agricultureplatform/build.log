@@ -1,0 +1,18 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  InheritDocTask replaced 45 of 45 inheritdoc tags and removed 29 private member docs in D:\work\sdk2\artifacts\obj\Azure.ResourceManager.AgriculturePlatform\Debug\net8.0\Azure.ResourceManager.AgriculturePlatform.xml
+  Azure.ResourceManager.AgriculturePlatform -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.AgriculturePlatform\Debug\net8.0\Azure.ResourceManager.AgriculturePlatform.dll
+  InheritDocTask replaced 45 of 45 inheritdoc tags and removed 29 private member docs in D:\work\sdk2\artifacts\obj\Azure.ResourceManager.AgriculturePlatform\Debug\netstandard2.0\Azure.ResourceManager.AgriculturePlatform.xml
+  Azure.ResourceManager.AgriculturePlatform -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.AgriculturePlatform\Debug\netstandard2.0\Azure.ResourceManager.AgriculturePlatform.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net462\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net9.0\Azure.Core.TestFramework.dll
+  Azure.Core.TestFramework -> D:\work\sdk2\artifacts\bin\Azure.Core.TestFramework\Debug\net8.0\Azure.Core.TestFramework.dll
+  Azure.ResourceManager.AgriculturePlatform.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.AgriculturePlatform.Tests\Debug\net462\Azure.ResourceManager.AgriculturePlatform.Tests.dll
+  Azure.ResourceManager.AgriculturePlatform.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.AgriculturePlatform.Tests\Debug\net8.0\Azure.ResourceManager.AgriculturePlatform.Tests.dll
+  Azure.ResourceManager.AgriculturePlatform.Tests -> D:\work\sdk2\artifacts\bin\Azure.ResourceManager.AgriculturePlatform.Tests\Debug\net9.0\Azure.ResourceManager.AgriculturePlatform.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:10.10
