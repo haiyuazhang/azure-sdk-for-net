@@ -46,6 +46,14 @@ interface JobResources {
   update is ArmCustomPatchAsync<
     JobResource,
     PatchModel = JobResourceUpdateParameter,
+    Parameters = {
+      /**
+       * Defines the If-Match condition. The patch will be performed only if the ETag of the job on the server matches this value.
+       */
+      #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+      @header("If-Match")
+      `If-Match`?: string;
+    }
   >;
 }
 
